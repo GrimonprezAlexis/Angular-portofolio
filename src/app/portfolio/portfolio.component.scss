@@ -1,0 +1,198 @@
+.container {
+  margin-inline: auto;
+  margin-block: 0 60px;
+  padding-inline: 30px;
+  max-width: 1200px;
+  font-family: Inter,sans-serif;
+  font-size: 14px;
+}
+
+h2 {
+  font-family: "DM Serif Display",sans-serif;
+  font-weight: 100;
+  font-size: 28px;
+  margin-bottom: 30px;
+}
+
+.wrapper-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.card {
+  max-width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.image-container {
+  position: relative;
+
+  img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    height: 350px;
+    width: 100%;
+    object-fit: cover;
+  }
+
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .icon {
+      display: inline-block;
+      margin-right: 10px;
+
+      i {
+        font-size: 3.5rem;
+        margin: 0 0.25em;
+        color: #fff;
+      }
+    }
+  }
+
+  &:hover .overlay {
+    opacity: 1;
+  }
+}
+
+
+footer {
+  padding: 20px;
+  margin-top: -3px;
+}
+
+.project-type {
+  opacity: 65%;
+}
+
+.project-title {
+  font-family: "DM Serif Display",serif;
+  font-weight: 600;
+  font-size: 18px;
+  margin-block: 14px 10px;
+}
+
+#app>section>section.suggestions>div>div>div:nth-child(6)>a>footer,#projects>div>div>div:nth-child(8)>a>footer {
+  background-color: #c6b231
+}
+
+#app>section>section.suggestions>div>div>div:nth-child(6)>a>footer,#projects>div>div>div:nth-child(7)>a>footer {
+  background-color: #35aa20
+}
+
+#app>section>section.suggestions>div>div>div:nth-child(6)>a>footer,#projects>div>div>div:nth-child(6)>a>footer {
+  background-color: #34a393
+}
+
+#app>section>section.suggestions>div>div>div:nth-child(5)>a>footer,#projects>div>div>div:nth-child(5)>a>footer {
+  background-color: #b9b95b
+}
+
+#app>section>section.suggestions>div>div>div:nth-child(4)>a>footer,#projects>div>div>div:nth-child(4)>a>footer {
+  background-color: #90725d
+}
+
+#app>section>section.suggestions>div>div>div:nth-child(3)>a>footer,#projects>div>div>div:nth-child(3)>a>footer {
+  background-color: #adbbbd
+}
+
+#app>section>section.suggestions>div>div>div:nth-child(2)>a>footer,#projects>div>div>div:nth-child(2)>a>footer {
+  background-color: #e0a876
+}
+
+#app>section>section.suggestions>div>div>div:first-child>a>footer,#projects>div>div>div:first-child>a>footer {
+  background-color: #aa4c20
+}
+
+/*--------------------------------------------------------------
+# Filter SCSS
+--------------------------------------------------------------*/
+/* Filter */
+#filter {
+  display: flex;
+  flex-wrap: wrap;
+  clear: both;
+
+  .search__filter {
+    &__title {
+      align-self: center;
+      padding-right: 20px;
+      font-weight: bold;
+      color: #fff;
+    }
+
+    &__list {
+      display: flex;
+      flex-wrap: wrap;
+      margin: 0;
+      justify-content: center;
+
+      li {
+        display: flex;
+        font-weight: bold;
+        align-items: center;
+        margin: 10px;
+        border: 2px solid #f2f2f2;
+        border-radius: 35px;
+        padding-right: 15px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+
+        &:hover {
+          background-color: #1c6e8c;
+          color: black;
+          border: 1px solid black;
+
+          .search__filter__icon {
+            background-color: black;
+            color: #1c6e8c;
+          }
+        }
+      }
+    }
+
+    &__icon {
+      display: flex;
+      background-color: #fff;
+      color: #111;
+      border-radius: 50%;
+      align-items: center;
+      margin: -2px;
+      min-height: 3rem;
+      min-width: 3rem;
+      justify-content: center;
+      transition: background-color 0.3s ease;
+
+      /** Force size icon Fontawesome */
+      i {
+        font-size: 1.3rem;
+        margin: 0 0.25em;
+      }
+
+    }
+
+    &__text {
+      padding-left: 12px;
+      color: #fff;
+    }
+  }
+}

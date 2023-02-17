@@ -1,0 +1,39 @@
+<section class="suggestions" id="projects">
+    <div class="container">
+        <h2>Mes projets</h2>
+
+        <section class="container" id="filter">
+            <h3 class="search__filter__title">Filtres</h3>
+            <ul class="search__filter__list" *ngFor="let categoryFilter of categoryFilters">
+                <li>
+                    <span class="search__filter__icon">
+                        <i class="{{categoryFilter.icon}}"></i>
+                    </span>
+                    <span class="search__filter__text">{{categoryFilter.label}}</span>
+                </li>
+            </ul>
+        </section>
+
+
+        <div class="wrapper-grid">
+            <div class="card" *ngFor="let item of portfolioData">
+                <a [href]="item.link" class="item-overlay">
+                    <div class="image-container">
+                        <img loading="lazy" [src]="item.image" [alt]="item.title">
+
+                        <div class="overlay">
+                              <span class="icon" *ngFor="let icon of item.icons">
+                                <i class="{{icon}}"></i>
+                              </span>
+                        </div>
+                    </div>
+
+                    <footer>
+                        <p class="project-type">{{item.title}}</p>
+                        <h3 class="project-title">{{item.description}}</h3>
+                    </footer>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
