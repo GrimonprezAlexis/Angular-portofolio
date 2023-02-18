@@ -93,18 +93,18 @@ footer {
 .project-title {
   font-family: "DM Serif Display",serif;
   font-weight: 600;
-  font-size: 18px;
+  font-size: 17px;
   margin-block: 14px 10px;
 }
 
 #app>section>section.suggestions>div>div>div:nth-child(6)>a>footer,
 #projects>div>div>div:nth-child(8)>a>footer {
-  background-color: #c6b231
+  background-color: #ff0100
 }
 
 #app>section>section.suggestions>div>div>div:nth-child(6)>a>footer,
 #projects>div>div>div:nth-child(7)>a>footer {
-  background-color: #35aa20
+  background-color: #ff6060
 }
 
 #app>section>section.suggestions>div>div>div:nth-child(6)>a>footer,
@@ -208,4 +208,10 @@ footer {
       color: #fff;
     }
   }
+}
+
+.itemLength {
+  text-align: center;
+  padding-bottom: 1rem;
+  font-size: 20px;
 }

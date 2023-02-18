@@ -2,35 +2,39 @@
     <div class="container">
         <h2>Mes projets</h2>
 
+        <!-- FILTERS-->
         <section class="container" id="filter">
             <h3 class="search__filter__title">Filtres</h3>
             <ul class="search__filter__list" *ngFor="let categoryFilter of categoryFilters">
-                <li>
+                <li (click)="setCurrentCategory(categoryFilter.label)">
                     <span class="search__filter__icon">
-                        <i class="{{categoryFilter.icon}}"></i>
+                        <i class="{{ categoryFilter.icon }}"></i>
                     </span>
-                    <span class="search__filter__text">{{categoryFilter.label}}</span>
+                    <span class="search__filter__text">{{ categoryFilter.label }}</span>
                 </li>
             </ul>
         </section>
 
+        <div class="itemLength" *ngIf="portfolioData">
+            <h3>{{ getFilteredItemList().length }} / {{ portfolioData.length }}</h3>
+        </div>
 
         <div class="wrapper-grid">
-            <div class="card" *ngFor="let item of portfolioData">
+            <div class="card" *ngFor="let item of getFilteredItemList()">
                 <a [href]="item.link" class="item-overlay">
                     <div class="image-container">
                         <img loading="lazy" [src]="item.image" [alt]="item.title">
 
                         <div class="overlay">
                               <span class="icon" *ngFor="let icon of item.icons">
-                                <i class="{{icon}}"></i>
+                                <i class="{{ icon }}"></i>
                               </span>
                         </div>
                     </div>
 
                     <footer>
-                        <p class="project-type">{{item.title}}</p>
-                        <h3 class="project-title">{{item.description}}</h3>
+                        <p class="project-type">{{ item.title }}</p>
+                        <h3 class="project-title">{{ item.description }}</h3>
                     </footer>
                 </a>
             </div>
