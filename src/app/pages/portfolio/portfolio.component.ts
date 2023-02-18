@@ -1,11 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-
-interface CategoryFilters {
-  label: string;
-  icon: string;
-  selected: boolean;
-}
+import { PortfolioService } from 'src/app/services/portfolio.service';
+import { CategoryFilters, PortfolioTypes } from 'src/app/interface';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-portfolio',
@@ -13,14 +10,15 @@ interface CategoryFilters {
   styleUrls: ['./portfolio.component.scss'],
 })
 export class PortfolioComponent implements OnInit {
-  portfolioData: any;
+  portfolioData: any = [{}];
   currentCategory: string = 'All';
 
-  constructor(private http: HttpClient) {}
+  constructor(private _portfolioService: PortfolioService) {}
 
   ngOnInit() {
-    this.http.get('assets/portfolio-data.json').subscribe((data) => {
+    this._portfolioService.getPortfolio().subscribe((data) => {
       this.portfolioData = data;
+      console.log(this.portfolioData);
     });
   }
 
@@ -28,37 +26,37 @@ export class PortfolioComponent implements OnInit {
     {
       label: 'All',
       icon: 'fa fa-star',
-      selected: this.currentCategory === 'All',
+      category: 'All',
     },
     {
       label: 'CSS',
       icon: 'fa fa-star',
-      selected: this.currentCategory === 'CSS',
+      category: 'CSS',
     },
     {
       label: 'JS',
       icon: 'fa-brands fa-js',
-      selected: this.currentCategory === 'JS',
+      category: 'JS',
     },
     {
       label: 'React',
       icon: 'fa-brands fa-react',
-      selected: this.currentCategory === 'React',
+      category: 'React',
     },
     {
       label: 'Angular',
       icon: 'fa-brands fa-angular',
-      selected: this.currentCategory === 'Angular',
+      category: 'Angular',
     },
     {
       label: 'Sass',
       icon: 'fa-brands fa-sass',
-      selected: this.currentCategory === 'Sass',
+      category: 'Sass',
     },
     {
       label: 'NodeJS',
       icon: 'fa-brands fa-node-js',
-      selected: this.currentCategory === 'NodeJS',
+      category: 'NodeJS',
     },
   ];
 
