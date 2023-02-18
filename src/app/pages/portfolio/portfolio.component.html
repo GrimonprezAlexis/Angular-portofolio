@@ -20,7 +20,7 @@
         </div>
 
         <div class="wrapper-grid">
-            <div class="card" *ngFor="let item of getFilteredItemList()">
+            <div class="card fade-in-delay-{{ i }}" *ngFor="let item of getFilteredItemList(); let i = index">
                 <a [href]="item.link" class="item-overlay">
                     <div class="image-container">
                         <img loading="lazy" [src]="item.image" [alt]="item.title">

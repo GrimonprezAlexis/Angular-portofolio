@@ -31,7 +31,68 @@ h2 {
   height: 100%;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+
+  animation: fade-item-menu 1s linear;
+  -moz-animation: fade-item-menu .6s; // Firefox
+  -webkit-animation: fade-item-menu .6s; // Safari et Chrome
+  -o-animation: fade-item-menu .6s; // Opera
+  animation-fill-mode: both;
 }
+
+
+
+//Card Animations - Replace the method delay normaly with delay
+@for $i from 0 to 9 {
+  .fade-in-delay-#{$i} {
+    animation-delay: #{$i/10}s;
+  }
+}
+
+@keyframes fade-item-menu {
+0% {
+  opacity: 0;
+  transform: scale(.1);
+}
+
+85% {
+  opacity: 1;
+  transform: scale(1.05);
+}
+100% {
+  transform: scale(1);
+}
+}
+
+@-moz-keyframes fade-item-menu { /* sur Firefox */
+0% {
+  opacity: 0;
+  transform: scale(.1);
+}
+
+85% {
+  opacity: 1;
+  transform: scale(1.05);
+}
+100% {
+  transform: scale(1);
+}
+}
+
+@-webkit-keyframes fade-item-menu { /* sur Safari et Chrome */
+0% {
+  opacity: 0;
+  transform: scale(.1);
+}
+
+85% {
+  opacity: 1;
+  transform: scale(1.05);
+}
+100% {
+  transform: scale(1);
+}
+}
+
 
 a {
   text-decoration: none;
