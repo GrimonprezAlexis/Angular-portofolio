@@ -1,0 +1,75 @@
+#home {
+    margin-top: 80px;
+    box-sizing: border-box;
+    background-color: white;
+}
+
+.container {
+    height: 100vh;
+    // display: flex;
+    // justify-content: center;
+    // align-items: center;
+
+    .row {
+      display: flex;
+      height: 100%;
+      
+      .col {
+        width: 25%;
+        position: relative;
+        font-size: 30px;
+        margin-left: 0.5rem;
+        margin-right: 0.5rem;
+        cursor: pointer;
+
+        &:hover {
+          //background-image: url('/assets/img/cover.jpg');
+          //opacity: 0.75;
+          //background-color: rgba(0,0,0,0.25);
+        }
+        .content {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          height: 100%;
+          p {
+            text-align: center;
+          }
+        }
+      }
+    }
+  }
+  
+  // Hide the background image by default
+  .col {
+    background-image: none;
+	-webkit-filter: grayscale(100%);
+	filter: grayscale(100%);
+	-webkit-transition: .3s ease-in-out;
+	transition: .3s ease-in-out;
+  }
+  
+  // Show the background image on hover
+  .col:hover {
+	-webkit-filter: grayscale(0);
+	filter: grayscale(0);
+  }
+  
+  // Define the background image for each column
+  .col:nth-child(1) {
+    background-image: url('/assets/img/projects.jpg');
+    background-position: left;
+  }
+  .col:nth-child(2) {
+    background-image: url('/assets/img/projects.jpg');
+    background-position: right;
+  }
+  .col:nth-child(3) {
+    background-image: url('/assets/img/about.jpg');
+    background-position: left;
+
+  }
+  .col:nth-child(4) {
+    background-image: url('/assets/img/about.jpg');
+    background-position: right;
+  }

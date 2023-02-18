@@ -1,0 +1,141 @@
+/*--------------------------------------------------------------
+# HEADER SCSS
+--------------------------------------------------------------*/
+$header-background-color: #fff;
+$header-color: #38495a;
+$header-font-family: 'Helvetica Neue', sans-serif;
+$header-nav-link-color: #777;
+
+.header {
+  background-color: $header-background-color;
+  color: $header-color;
+  font-family: $header-font-family;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    //max-width: 1200px;
+    padding: 1rem 2rem;
+    margin: 0 auto;
+
+    .logo {
+      font-size: 2rem;
+      text-decoration: none;
+      background: -webkit-linear-gradient(white, #38495a);
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-family: "Montserrat";
+      letter-spacing: 5px;
+    }
+
+    .nav {
+      ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+
+        li {
+          margin-left: 4rem;
+
+          a {
+            text-decoration: none;
+            color: $header-nav-link-color;
+
+            &:hover {
+              color: $header-color;
+            }
+            
+          }
+        }
+      }
+    }
+
+    .hamburger-menu {
+      display: none;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 24px;
+      width: 30px;
+      cursor: pointer;
+      border: none;
+      background-color: transparent;
+
+      span {
+        height: 3px;
+        width: 100%;
+        background-color: $header-color;
+        display: block;
+        transition: transform 0.3s ease;
+
+        &:nth-child(1) {
+          transform-origin: left;
+        }
+
+        &:nth-child(3) {
+          transform-origin: right;
+        }
+      }
+
+      &.active {
+        span {
+          &:nth-child(1) {
+            transform: rotate(45deg) translate(3px, 3px);
+          }
+
+          &:nth-child(2) {
+            opacity: 0;
+          }
+
+          &:nth-child(3) {
+            transform: rotate(-45deg) translate(3px, -3px);
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+    .container {
+      .nav {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: $header-background-color;
+        padding: 1rem;
+
+        ul {
+          flex-direction: column;
+
+          li {
+            margin: 0;
+            margin-bottom: 1rem;
+          }
+        }
+      }
+
+      .hamburger-menu {
+        display: flex;
+      }
+    }
+
+    &.active {
+      .container {
+        .nav {
+          display: block;
+        }
+      }
+    }
+  }
+}

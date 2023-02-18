@@ -1,0 +1,72 @@
+// Variables de couleur
+$primary-color: #009688;
+$secondary-color: #ff9800;
+$text-color: white;
+
+// Variables de typographie
+$base-font-size: 16px;
+$heading-font-weight: 700;
+
+#about {
+    margin-top: 80px;
+    padding: 20px;
+    box-sizing: border-box;
+    font-size: $base-font-size;
+    line-height: 1.5;
+    font-family: 'Roboto', sans-serif;
+    color: $text-color;
+}
+
+.container {
+    margin-inline: auto;
+    margin-block: 0 60px;
+    padding-inline: 30px;
+    max-width: 1200px;
+    font-family: Inter,sans-serif;
+    font-size: 14px;
+}
+
+h2 {
+    font-family: "DM Serif Display",sans-serif;
+    font-weight: 100;
+    font-size: 28px;
+    margin-bottom: 30px;
+}
+
+
+.row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.col-4 {
+    flex-basis: 33.33%;
+    max-width: 33.33%;
+}
+
+.col-8 {
+    flex-basis: 66.66%;
+    max-width: 66.66%;
+}
+
+img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 50%;
+    margin-bottom: 20px;
+}
+
+ul {
+    list-style: square;
+    list-style-position: inside;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    margin-left: 20px;
+}

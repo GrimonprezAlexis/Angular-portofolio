@@ -1,3 +1,9 @@
+#projects {
+  margin-top: 80px;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
 .container {
   margin-inline: auto;
   margin-block: 0 60px;
@@ -91,42 +97,49 @@ footer {
   margin-block: 14px 10px;
 }
 
-#app>section>section.suggestions>div>div>div:nth-child(6)>a>footer,#projects>div>div>div:nth-child(8)>a>footer {
+#app>section>section.suggestions>div>div>div:nth-child(6)>a>footer,
+#projects>div>div>div:nth-child(8)>a>footer {
   background-color: #c6b231
 }
 
-#app>section>section.suggestions>div>div>div:nth-child(6)>a>footer,#projects>div>div>div:nth-child(7)>a>footer {
+#app>section>section.suggestions>div>div>div:nth-child(6)>a>footer,
+#projects>div>div>div:nth-child(7)>a>footer {
   background-color: #35aa20
 }
 
-#app>section>section.suggestions>div>div>div:nth-child(6)>a>footer,#projects>div>div>div:nth-child(6)>a>footer {
+#app>section>section.suggestions>div>div>div:nth-child(6)>a>footer,
+#projects>div>div>div:nth-child(6)>a>footer {
   background-color: #34a393
 }
 
-#app>section>section.suggestions>div>div>div:nth-child(5)>a>footer,#projects>div>div>div:nth-child(5)>a>footer {
+#app>section>section.suggestions>div>div>div:nth-child(5)>a>footer,
+#projects>div>div>div:nth-child(5)>a>footer {
   background-color: #b9b95b
 }
 
-#app>section>section.suggestions>div>div>div:nth-child(4)>a>footer,#projects>div>div>div:nth-child(4)>a>footer {
+#app>section>section.suggestions>div>div>div:nth-child(4)>a>footer,
+#projects>div>div>div:nth-child(4)>a>footer {
   background-color: #90725d
 }
 
-#app>section>section.suggestions>div>div>div:nth-child(3)>a>footer,#projects>div>div>div:nth-child(3)>a>footer {
+#app>section>section.suggestions>div>div>div:nth-child(3)>a>footer,
+#projects>div>div>div:nth-child(3)>a>footer {
   background-color: #adbbbd
 }
 
-#app>section>section.suggestions>div>div>div:nth-child(2)>a>footer,#projects>div>div>div:nth-child(2)>a>footer {
+#app>section>section.suggestions>div>div>div:nth-child(2)>a>footer,
+#projects>div>div>div:nth-child(2)>a>footer {
   background-color: #e0a876
 }
 
-#app>section>section.suggestions>div>div>div:first-child>a>footer,#projects>div>div>div:first-child>a>footer {
+#app>section>section.suggestions>div>div>div:first-child>a>footer,
+#projects>div>div>div:first-child>a>footer {
   background-color: #aa4c20
 }
 
 /*--------------------------------------------------------------
 # Filter SCSS
 --------------------------------------------------------------*/
-/* Filter */
 #filter {
   display: flex;
   flex-wrap: wrap;

@@ -1,0 +1,33 @@
+<section id="home">
+  <div class="container">
+    <div class="row">
+      <div 
+        class="col"
+        *ngFor="let item of columnItems" 
+        (mouseenter)="onMouseEnter(item.id)" 
+        (mouseleave)="onMouseOut()"
+      >
+      <div class="content">
+        <p>{{ item.label }}</p>
+      </div>
+    </div>
+    </div>
+  </div>
+
+
+  <!-- <div class="homeContainer">
+    <div 
+      class="columnContainer" 
+      *ngFor="let item of columnItems" 
+      (mouseenter)="onMouseEnter(item.id)" 
+      (mouseleave)="onMouseOut(item.id)"
+    >
+      <span>{{ item.label }}</span>
+    </div>
+  </div> -->
+</section>
+
+  <!-- <img src="../assets/img/about.jpg" alt="Avatar" className="imageCover imageCover-1 image-overlay" />
+  <img src="../assets//img//projects.jpg" alt="Avatar" className="imageCover imageCover-2" />
+  <img src="../assets/img/about.jpg" alt="Avatar" className="imageCover imageCover-3" />
+  <img src="../assets//img//projects.jpg" alt="Avatar" className="imageCover imageCover-4" /> -->
