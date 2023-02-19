@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { PortfolioService } from 'src/app/services/portfolio.service';
 
 @Component({
   selector: 'app-admin',
@@ -6,9 +7,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./admin.component.scss'],
 })
 export class AdminComponent {
-  constructor() {}
+  portfolioData: any = [];
 
-  ngOnInit() {}
+  constructor(private _portfolioService: PortfolioService) {}
 
-  //getPortfolioData(): PortfolioTypes[] {}
+  ngOnInit() {
+    this._portfolioService.getPortfolio().subscribe((data) => {
+      this.portfolioData = data;
+      console.log(this.portfolioData);
+    });
+  }
 }

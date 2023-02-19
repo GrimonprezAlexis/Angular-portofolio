@@ -30,5 +30,27 @@
           
           <button type="submit">Envoyer</button>
         </form>
+
+
+      <div class="wrapper-grid">
+          <div class="card" *ngFor="let item of portfolioData; let i = index">
+              
+            <header>
+              <p>{{ item.title }}</p>
+              <p>{{ item.description }}</p>
+              <span class="icon" *ngFor="let icon of item.icons">
+                <i class="{{ icon }}"></i>
+              </span>
+            </header>
+
+            <a [href]="item.link">
+                <div class="image-container">
+                  <img loading="lazy" [src]="item.image" [alt]="item.title" />
+                </div>
+            </a>
+          </div>
+      </div>
+
+
     </div>
 </section>

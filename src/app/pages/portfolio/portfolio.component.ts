@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
 import { PortfolioService } from 'src/app/services/portfolio.service';
 import { CategoryFilters, PortfolioTypes } from 'src/app/interface';
-import { Observable } from 'rxjs';
+import { ModalService } from 'src/app/services/modal.service';
+import { ModalEditPortfolioComponent } from 'src/app/components/modal-edit-portfolio/modal-edit-portfolio.component';
+import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-portfolio',
@@ -12,8 +13,13 @@ import { Observable } from 'rxjs';
 export class PortfolioComponent implements OnInit {
   portfolioData: any = [{}];
   currentCategory: string = 'All';
+  dialogConfig = new MatDialogConfig();
 
-  constructor(private _portfolioService: PortfolioService) {}
+  constructor(
+    private _portfolioService: PortfolioService,
+    private _modalService: ModalService,
+    public dialog: MatDialog
+  ) {}
 
   ngOnInit() {
     this._portfolioService.getPortfolio().subscribe((data) => {
@@ -73,5 +79,22 @@ export class PortfolioComponent implements OnInit {
           item.categories.includes(this.currentCategory)
       );
     }
+  }
+
+  newItem: PortfolioTypes | null = null;
+
+  editItem(index: number) {
+    this.dialogConfig.data = this.portfolioData[index];
+
+    const modalRef = this.dialog.open(
+      ModalEditPortfolioComponent,
+      this.dialogConfig
+    );
+
+    modalRef.afterClosed().subscribe((result: any) => {
+      if (result !== null) {
+        this.portfolioData[index] = result;
+      }
+    });
   }
 }

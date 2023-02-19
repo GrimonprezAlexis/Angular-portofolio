@@ -21,6 +21,11 @@
 
         <div class="wrapper-grid">
             <div class="card fade-in-delay-{{ i }}" *ngFor="let item of getFilteredItemList(); let i = index">
+
+                <footer>
+                    <button (click)="editItem(i)">Edit</button>
+                </footer>
+
                 <a [href]="item.link" class="item-overlay">
                     <div class="image-container">
                         <img loading="lazy" [src]="item.image" [alt]="item.title">
@@ -37,7 +42,27 @@
                         <h3 class="project-title">{{ item.description }}</h3>
                     </footer>
                 </a>
+
+
+                <!-- <div *ngIf="item.editing">
+                    <form (submit)="saveItem(i)">
+                      <label>Title:</label>
+                      <input type="text" [(ngModel)]="item.title" name="title" />
+              
+                      <label>Description:</label>
+                      <textarea [(ngModel)]="item.description" name="description"></textarea>
+              
+                      <label>Link:</label>
+                      <input type="text" [(ngModel)]="item.link" name="link" />
+              
+                      <button type="submit">Save</button>
+                    </form>
+                </div>
+                <button (click)="toggleEdit(item)">Edit</button> -->
+
+
             </div>
         </div>
+
     </div>
 </section>
