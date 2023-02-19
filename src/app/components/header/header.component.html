@@ -1,7 +1,7 @@
   <header class="header">
     <div class="container">
       <a href="/" class="logo">Alexis Grimonprez</a>
-      <nav class="nav">
+      <nav class="nav" aria-label="Site menu" role="navigation">
         <ul>
           <li><a routerLink="/about">A propos <i class="fa-regular fa-user"></i></a></li>
           <li><a routerLink="/portfolio">Projets <i class="fa-solid fa-code"></i></a></li>
@@ -9,11 +9,25 @@
           <li><a href="#">CV</a></li>
           <li><a routerLink="/admin">Admin <i class="fa-solid fa-screwdriver-wrench"></i></a></li>
         </ul>
-      </nav>
-      <button class="hamburger-menu">
+      </nav> 
+      <button class="hamburger-menu" (click)="toggleMenu()">
         <span></span>
         <span></span>
         <span></span>
-      </button>
+      </button>      
     </div>
+
+
+    <nav class="navigation-mobile" aria-label="Site menu" role="navigation" *ngIf="showMenu">
+      <div class="menu__items" *ngIf="showMenu">
+        <a routerLink="/about" class="menu__item">A propos <i class="fa-regular fa-user"></i></a>
+        <a routerLink="/portfolio" class="menu__item">Projets <i class="fa-solid fa-code"></i></a>
+        <a routerLink="/contact" class="menu__item">Contact <i class="fa-solid fa-phone"></i></a>
+        <a href="#" class="menu__item">CV</a>
+        <a routerLink="/admin" class="menu__item">Admin <i class="fa-solid fa-screwdriver-wrench"></i></a>
+      </div>
+    </nav>
+
   </header>
+
+

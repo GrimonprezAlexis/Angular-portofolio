@@ -1,8 +1,10 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 interface ColumnItems {
   id: number;
   label: string;
+  link: string;
 }
 
 @Component({
@@ -12,13 +14,15 @@ interface ColumnItems {
 })
 export class HomeComponent {
   columnItems: ColumnItems[] = [
-    { id: 1, label: 'A propos' },
-    { id: 2, label: 'Projets' },
-    { id: 3, label: 'Contact' },
-    { id: 4, label: 'CV' },
+    { id: 1, label: 'A propos', link: 'about' },
+    { id: 2, label: 'Projets', link: 'portfolio' },
+    { id: 3, label: 'Contact', link: 'contact' },
+    { id: 4, label: 'CV', link: '' },
   ];
 
   ngOnInit(): void {}
+
+  constructor(private _router: Router) {}
 
   onMouseEnter(index: number): void {
     const col = document.querySelectorAll('.col')[index];
@@ -30,5 +34,9 @@ export class HomeComponent {
     for (let i = 0; i < cols.length; i++) {
       cols[i].classList.remove('show-image');
     }
+  }
+
+  goToLink(link: string) {
+    this._router.navigate([`${link}`]);
   }
 }

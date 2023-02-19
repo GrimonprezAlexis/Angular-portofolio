@@ -6,10 +6,21 @@ import { Component } from '@angular/core';
   styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent {
+  showMenu: boolean = false;
+
   // links = [
   //   { label: 'A propos', url: '/about' },
   //   { label: 'Projets', url: '/projets' },
   //   { label: 'Contact', url: '/contact' },
   //   { label: 'CV', url: '/cv' },
   // ];
+
+  constructor() {}
+  ngOninit() {}
+
+  toggleMenu() {
+    this.showMenu = !this.showMenu;
+  }
+
+  ngOnDestroy() {}
 }

@@ -6,6 +6,7 @@
         *ngFor="let item of columnItems" 
         (mouseenter)="onMouseEnter(item.id)" 
         (mouseleave)="onMouseOut()"
+        (click)="goToLink(item.link)" 
       >
       <div class="content">
         <p>{{ item.label }}</p>

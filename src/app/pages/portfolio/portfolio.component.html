@@ -5,8 +5,8 @@
         <!-- FILTERS-->
         <section class="container" id="filter">
             <h3 class="search__filter__title">Filtres</h3>
-            <ul class="search__filter__list" *ngFor="let categoryFilter of categoryFilters">
-                <li (click)="setCurrentCategory(categoryFilter.label)">
+            <ul class="search__filter__list">
+                <li *ngFor="let categoryFilter of categoryFilters" (click)="setCurrentCategory(categoryFilter.label)">
                     <span class="search__filter__icon">
                         <i class="{{ categoryFilter.icon }}"></i>
                     </span>

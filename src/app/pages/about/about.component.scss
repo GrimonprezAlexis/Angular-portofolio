@@ -8,12 +8,11 @@ $base-font-size: 16px;
 $heading-font-weight: 700;
 
 #about {
-    margin-top: 80px;
     padding: 20px;
     box-sizing: border-box;
     font-size: $base-font-size;
     line-height: 1.5;
-    font-family: 'Roboto', sans-serif;
+    // font-family: 'Roboto', sans-serif;
     color: $text-color;
 }
 
@@ -22,8 +21,9 @@ $heading-font-weight: 700;
     margin-block: 0 60px;
     padding-inline: 30px;
     max-width: 1200px;
-    font-family: Inter,sans-serif;
+    // font-family: Inter,sans-serif;
     font-size: 14px;
+    margin-top: 80px;
 }
 
 h2 {
@@ -35,6 +35,7 @@ h2 {
 
 
 .row {
+    font-family: Georgia;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -70,3 +71,46 @@ ul {
 li {
     margin-left: 20px;
 }
+
+
+
+/*--------------------------------------------------------------
+# RESPONSIVE
+--------------------------------------------------------------*/
+@media screen and (min-width: 320px) and (max-width:992px){
+
+    .container {
+        margin-top: 120px;
+    }
+    .row {
+        flex-direction: column;
+        font-size: 20px;
+    }
+  
+    .col-4 {
+        max-width: 100%;
+    }
+
+    .col-8 {
+        max-width: 100%;
+    }
+
+    .stack {
+        display: flex;
+        flex-direction: column;
+        font-size: 20px;
+    }
+
+
+  }
+  
+  @media screen and (min-width: 320px) and (max-width:767px){    
+  }
+  
+  @media screen and (min-width: 450px) and (max-width:992px){
+  }
+  
+  @media screen and (min-width: 992px){
+  }
+  
+  @media screen and (min-width: 1290px){}
