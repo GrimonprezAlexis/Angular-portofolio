@@ -1,41 +1,14 @@
-// Variables de couleur
-$primary-color: #009688;
-$secondary-color: #ff9800;
-$text-color: white;
-
-// Variables de typographie
-$base-font-size: 16px;
-$heading-font-weight: 700;
+@import '../../css//legacy.scss';
 
 #about {
-    padding: 20px;
-    box-sizing: border-box;
-    font-size: $base-font-size;
-    line-height: 1.5;
-    // font-family: 'Roboto', sans-serif;
-    color: $text-color;
+    @extend %basePage;
 }
 
 .container {
-    margin-inline: auto;
-    margin-block: 0 60px;
-    padding-inline: 30px;
-    max-width: 1200px;
-    // font-family: Inter,sans-serif;
-    font-size: 14px;
-    margin-top: 80px;
+    @extend %container;
 }
-
-h2 {
-    font-family: "DM Serif Display",sans-serif;
-    font-weight: 100;
-    font-size: 28px;
-    margin-bottom: 30px;
-}
-
 
 .row {
-    font-family: Georgia;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -72,45 +45,38 @@ li {
     margin-left: 20px;
 }
 
+.container-stack {
+    margin-bottom: 2rem;
+}
 
+.stack {
+    margin-top: 2rem;
+    font-size: 1.3rem;
+}
 
-/*--------------------------------------------------------------
-# RESPONSIVE
---------------------------------------------------------------*/
-@media screen and (min-width: 320px) and (max-width:992px){
+.angular:hover{
+    color: red;
+}
+.aws:hover {
+    color: #ff9900;
+}
+.nodejs:hover {
+    color: #68a063;
+}
+.php:hover {
+    color: #787cb4;
+}
+.react:hover {
+    color: #61dbfb;
+}
+.sass:hover {
+    color: #ce689b;
+}
+.typescript:hover {
+    color: #2d79c7;
+}
+.git:hover {
+    color: #f05133;
+}
 
-    .container {
-        margin-top: 120px;
-    }
-    .row {
-        flex-direction: column;
-        font-size: 20px;
-    }
-  
-    .col-4 {
-        max-width: 100%;
-    }
-
-    .col-8 {
-        max-width: 100%;
-    }
-
-    .stack {
-        display: flex;
-        flex-direction: column;
-        font-size: 20px;
-    }
-
-
-  }
-  
-  @media screen and (min-width: 320px) and (max-width:767px){    
-  }
-  
-  @media screen and (min-width: 450px) and (max-width:992px){
-  }
-  
-  @media screen and (min-width: 992px){
-  }
-  
-  @media screen and (min-width: 1290px){}
+@import './responsive.scss';

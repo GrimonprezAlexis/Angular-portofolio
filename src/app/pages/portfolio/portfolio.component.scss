@@ -1,27 +1,79 @@
+@import '../../css//legacy.scss';
+@import './animations.scss';
+
 #projects {
-  padding: 20px;
-  box-sizing: border-box;
+  @extend %basePage;
 }
 
 .container {
-  margin-inline: auto;
-  margin-block: 0 60px;
-  padding-inline: 30px;
-  max-width: 1200px;
-  font-family: Inter,sans-serif;
-  font-size: 14px;
-  margin-top: 80px;
+  @extend %container;
 }
 
-h2 {
-  font-family: "DM Serif Display",sans-serif;
-  font-weight: 100;
-  font-size: 28px;
-  margin-bottom: 30px;
+#filter {
+  display: flex;
+  flex-wrap: wrap;
+  clear: both;
 }
 
-h3 {
-  font-family: "DM Serif Display", sans-serif;
+.search__filter__title {
+  align-self: center;
+  padding-right: 20px;
+  font-weight: bold;
+  color: $white;
+}
+
+.search__filter__list {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
+  justify-content: center;
+
+  li {
+    display: flex;
+    font-weight: bold;
+    align-items: center;
+    margin: 10px;
+    border: 2px solid #f2f2f2;
+    border-radius: 35px;
+    padding-right: 15px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      background: $blue;
+      color: $black;
+      border: 1px solid $black;
+
+      .search__filter__icon {
+        background: $black;
+        color: $blue;
+      }
+    }
+  }
+}
+
+.search__filter__icon {
+  display: flex;
+  background: $white;
+  color: #111;
+  border-radius: 50%;
+  align-items: center;
+  margin: -2px;
+  min-height: 3rem;
+  min-width: 3rem;
+  justify-content: center;
+  transition: background-color 0.3s ease;
+
+  /** Force size icon Fontawesome */
+  i {
+    font-size: 1.3rem;
+    margin: 0 0.25em;
+  }
+}
+
+.search__filter__text {
+  padding-left: 12px;
+  color: $white;
 }
 
 .wrapper-grid {
@@ -30,74 +82,22 @@ h3 {
   gap: 1.5rem;
 }
 
+.itemLength {
+  text-align: center;
+  padding-bottom: 1rem;
+  font-size: 20px;
+}
+
 .card {
   max-width: 100%;
   height: 100%;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-
   animation: fade-item-menu 1s linear;
   -moz-animation: fade-item-menu .6s; // Firefox
   -webkit-animation: fade-item-menu .6s; // Safari et Chrome
   -o-animation: fade-item-menu .6s; // Opera
   animation-fill-mode: both;
-}
-
-//Card Animations - Replace the method delay normaly with delay
-@for $i from 0 to 9 {
-  .fade-in-delay-#{$i} {
-    animation-delay: #{$i/10}s;
-  }
-}
-
-@keyframes fade-item-menu {
-  0% {
-    opacity: 0;
-    transform: scale(.1);
-  }
-
-  85% {
-    opacity: 1;
-    transform: scale(1.05);
-  }
-  100% {
-    transform: scale(1);
-  }
-}
-
-@-moz-keyframes fade-item-menu { /* sur Firefox */
-  0% {
-    opacity: 0;
-    transform: scale(.1);
-  }
-
-  85% {
-    opacity: 1;
-    transform: scale(1.05);
-  }
-  100% {
-    transform: scale(1);
-  }
-}
-
-@-webkit-keyframes fade-item-menu { /* sur Safari et Chrome */
-  0% {
-    opacity: 0;
-    transform: scale(.1);
-  }
-
-  85% {
-    opacity: 1;
-    transform: scale(1.05);
-  }
-  100% {
-    transform: scale(1);
-  }
-}
-
-a {
-  text-decoration: none;
-  color: inherit;
 }
 
 .image-container {
@@ -112,36 +112,35 @@ a {
     object-fit: cover;
   }
 
-  .overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    opacity: 0;
-    transition: opacity 0.3s ease-in-out;
-    background-color: rgba(0, 0, 0, 0.5);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    .icon {
-      display: inline-block;
-      margin-right: 10px;
-
-      i {
-        font-size: 3.5rem;
-        margin: 0 0.25em;
-        color: #fff;
-      }
-    }
-  }
-
   &:hover .overlay {
     opacity: 1;
   }
 }
 
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .icon {
+    display: inline-block;
+    margin-right: 10px;
+
+    i {
+      font-size: 3.5rem;
+      margin: 0 0.25em;
+      color: $white;
+    }
+  }
+}
 
 footer {
   padding: 20px;
@@ -159,162 +158,29 @@ footer {
   margin-block: 14px 10px;
 }
 
-#app>section>section.suggestions>div>div>div:nth-child(6)>a>footer,
 #projects>div>div>div:nth-child(8)>a>footer {
-  background-color: #ff0100
+  background: #ff0100;
 }
-
-#app>section>section.suggestions>div>div>div:nth-child(6)>a>footer,
 #projects>div>div>div:nth-child(7)>a>footer {
-  background-color: #ff6060
+  background: #ff6060;
 }
-
-#app>section>section.suggestions>div>div>div:nth-child(6)>a>footer,
 #projects>div>div>div:nth-child(6)>a>footer {
-  background-color: #34a393
+  background: #34a393;
 }
-
-#app>section>section.suggestions>div>div>div:nth-child(5)>a>footer,
 #projects>div>div>div:nth-child(5)>a>footer {
-  background-color: #b9b95b
+  background: #b9b95b;
 }
-
-#app>section>section.suggestions>div>div>div:nth-child(4)>a>footer,
 #projects>div>div>div:nth-child(4)>a>footer {
-  background-color: #90725d
+  background: #90725d;
 }
-
-#app>section>section.suggestions>div>div>div:nth-child(3)>a>footer,
 #projects>div>div>div:nth-child(3)>a>footer {
-  background-color: #adbbbd
+  background: #adbbbd;
 }
-
-#app>section>section.suggestions>div>div>div:nth-child(2)>a>footer,
 #projects>div>div>div:nth-child(2)>a>footer {
-  background-color: #e0a876
+  background: #e0a876;
 }
-
-#app>section>section.suggestions>div>div>div:first-child>a>footer,
 #projects>div>div>div:first-child>a>footer {
-  background-color: #aa4c20
+  background: #aa4c20;
 }
 
-/*--------------------------------------------------------------
-# Filter SCSS
---------------------------------------------------------------*/
-#filter {
-  display: flex;
-  flex-wrap: wrap;
-  clear: both;
-
-  .search__filter {
-    &__title {
-      align-self: center;
-      padding-right: 20px;
-      font-weight: bold;
-      color: #fff;
-    }
-
-    &__list {
-      display: flex;
-      flex-wrap: wrap;
-      margin: 0;
-      justify-content: center;
-
-      li {
-        display: flex;
-        font-weight: bold;
-        align-items: center;
-        margin: 10px;
-        border: 2px solid #f2f2f2;
-        border-radius: 35px;
-        padding-right: 15px;
-        cursor: pointer;
-        transition: background-color 0.3s ease;
-
-        &:hover {
-          background-color: #1c6e8c;
-          color: black;
-          border: 1px solid black;
-
-          .search__filter__icon {
-            background-color: black;
-            color: #1c6e8c;
-          }
-        }
-      }
-    }
-
-    &__icon {
-      display: flex;
-      background-color: #fff;
-      color: #111;
-      border-radius: 50%;
-      align-items: center;
-      margin: -2px;
-      min-height: 3rem;
-      min-width: 3rem;
-      justify-content: center;
-      transition: background-color 0.3s ease;
-
-      /** Force size icon Fontawesome */
-      i {
-        font-size: 1.3rem;
-        margin: 0 0.25em;
-      }
-
-    }
-
-    &__text {
-      padding-left: 12px;
-      color: #fff;
-    }
-  }
-}
-
-.itemLength {
-  text-align: center;
-  padding-bottom: 1rem;
-  font-size: 20px;
-}
-
-@media screen and (min-width: 320px) and (max-width:992px){
-  .container {
-    margin-top: 120px;
-    font-family: Georgia;
-  }
-  #filter {
-    display: block;
-    margin: 0 auto;
-    margin-top: 3rem;
-
-    .search__filter__list {
-      display: block;
-    }
-  }
-
-  h3 {
-    font-size: 20px;
-    margin-bottom: 2rem;
-    font-weight: normal;
-  }
-
-  footer {
-    font-size: 22px;
-    font-weight: bold;
-  }
-
-  .project-title {
-    font-weight: 600;
-    font-size: 20px;
-  }
-}
-
-@media screen and (min-width: 320px) and (max-width:767px){    
-}
-@media screen and (min-width: 450px) and (max-width:992px){
-}
-@media screen and (min-width: 992px){
-}
-
-@media screen and (min-width: 1290px){}
+@import './responsive.scss';

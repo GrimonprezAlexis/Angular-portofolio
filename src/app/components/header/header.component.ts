@@ -8,14 +8,8 @@ import { Component } from '@angular/core';
 export class HeaderComponent {
   showMenu: boolean = false;
 
-  // links = [
-  //   { label: 'A propos', url: '/about' },
-  //   { label: 'Projets', url: '/projets' },
-  //   { label: 'Contact', url: '/contact' },
-  //   { label: 'CV', url: '/cv' },
-  // ];
-
   constructor() {}
+
   ngOninit() {}
 
   toggleMenu() {

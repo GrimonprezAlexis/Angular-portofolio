@@ -1,37 +1,15 @@
 // Variables de couleur
-$primary-color: #1c6e8c;;
-$secondary-color: #ff9800;
-$text-color: #fff;
 $divider-color: rgba(255, 255, 255, 0.12);
-
-// Variables de typographie
-$base-font-size: 16px;
 $heading-font-weight: 700;
 
+@import '../../css//legacy.scss';
+
 #contact {
-    padding: 20px;
-    box-sizing: border-box;
-    line-height: 1.5;
-    font-size: $base-font-size;
-    color: $text-color;
-    font-family: Georgia;
+  @extend %basePage;
 }
 
 .container {
-    margin-inline: auto;
-    margin-block: 0 60px;
-    padding-inline: 30px;
-    max-width: 1200px;
-    font-family: Inter,sans-serif;
-    font-size: 14px;
-    margin-top: 80px;
-}
-  
-h2 {
-    font-family: "DM Serif Display",sans-serif;
-    font-weight: 100;
-    font-size: 28px;
-    margin-bottom: 30px;
+  @extend %container;
 }
 
 // Styles pour le formulaire de contact
@@ -41,10 +19,11 @@ form {
   max-width: 600px;
   margin: 0 auto;
   padding: 40px;
-  background-color: #222;
+  background: #222;
   border-radius: 8px;
   box-shadow: 0px 0px 16px rgba(0, 0, 0, 0.5);
-  color: $text-color;
+  color: $white;
+  margin-top: 2rem;
 }
 
 label {
@@ -58,8 +37,8 @@ input, textarea {
   padding: 10px;
   border-radius: 4px;
   border: none;
-  background-color: #333;
-  color: $text-color;
+  background: #333;
+  color: $white;
   font-size: 1em;
   margin-bottom: 20px;
   box-shadow: inset 0 0 0 1px $divider-color;
@@ -70,8 +49,8 @@ textarea {
 }
 
 button[type="submit"] {
-  background-color: $primary-color;
-  color: $text-color;
+  background: $blue;
+  color: $white;
   padding: 10px 20px;
   border: none;
   border-radius: 4px;
@@ -82,61 +61,11 @@ button[type="submit"] {
 }
 
 button[type="submit"]:hover {
-  background-color: darken($primary-color, 10%);
+  background: darken($blue, 10%);
 }
 
 button[type="submit"]:active {
-  background-color: darken($primary-color, 20%);
+  background: darken($blue, 20%);
 }
 
-
-
-/*--------------------------------------------------------------
-# RESPONSIVE
---------------------------------------------------------------*/
-@media screen and (min-width: 320px) and (max-width:992px){
-  .container {
-    margin-top: 120px;
-    font-family: Georgia;
-  }
-  #filter {
-    display: block;
-    margin: 0 auto;
-    margin-top: 3rem;
-
-    .search__filter__list {
-      display: block;
-    }
-  }
-
-  h3 {
-    font-size: 20px;
-    margin-bottom: 2rem;
-    font-weight: normal;
-  }
-
-  footer {
-    font-size: 22px;
-    font-weight: bold;
-  }
-
-  .project-title {
-    font-weight: 600;
-    font-size: 20px;
-  }
-
-}
-
-@media screen and (min-width: 320px) and (max-width:767px){    
-  .container {
-    margin-top: 120px;    
-  }
-}
-
-@media screen and (min-width: 450px) and (max-width:992px){
-}
-
-@media screen and (min-width: 992px){
-}
-
-@media screen and (min-width: 1290px){}
+@import './responsive.scss';

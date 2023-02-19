@@ -1,0 +1,38 @@
+// Variables de typographie
+$base-font-size: 16px;
+$white: #fff;
+$black: #000;
+$blue: #1c6e8c;
+
+%container {
+    margin-inline: auto;
+    margin-block: 0 60px;
+    padding-inline: 30px;
+    max-width: 1200px;
+    font-size: $base-font-size;
+    margin-top: 80px;
+}
+
+%basePage {
+  font-family: Georgia;
+  padding: 20px;
+  box-sizing: border-box;
+  line-height: 1.5;
+  font-size: $base-font-size;
+  color: $white;
+}
+
+
+h2, h3 {
+    font-family: "DM Serif Display", sans-serif;
+  }
+
+h2 {
+    font-weight: 100;
+    font-size: 28px;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
