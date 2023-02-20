@@ -59,7 +59,7 @@
         "title": "Sportsee",    
         "description": "Tableau de bord d'analytics avec React",    
         "image": "https://github.com/GrimonprezAlexis/P12_Sportsee/raw/main/public/img/sportsee.png",    
-        "link": "https://github.com/GrimonprezAlexis/P12_Sportsee",
+        "link": "https://p12-sportsee-ten.vercel.app",
         "icons": ["fa-brands fa-react", "fa-brands fa-sass", "fa-brands fa-node"],
         "categories": ["React", "NodeJS", "Sass", "App"]
     },
@@ -75,7 +75,7 @@
         "title": "HRnet",    
         "description": "librairie jQuery vers React",    
         "image": "../assets/img/P11-Hrnet.png",    
-        "link": "https://github.com/GrimonprezAlexis/P14_HRnet",
+        "link": "https://p14-h-rnet-gules.vercel.app/",
         "icons": ["fa-brands fa-react", "fa-brands fa-sass"],
         "categories": ["React", "Sass", "App"]
     }
