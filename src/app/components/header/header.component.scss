@@ -6,6 +6,15 @@ $header-color: #38495a;
 $header-font-family: 'Helvetica Neue', sans-serif;
 $header-nav-link-color: #777;
 
+.container_logo {
+  display: flex;
+  flex-direction: column;
+
+  span {
+    letter-spacing: 0.25em;
+  }
+}
+
 .header {
   background-color: $header-background-color;
   color: $header-color;
