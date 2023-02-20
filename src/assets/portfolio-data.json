@@ -59,7 +59,7 @@
         "title": "Sportsee",    
         "description": "Tableau de bord d'analytics avec React",    
         "image": "https://github.com/GrimonprezAlexis/P12_Sportsee/raw/main/public/img/sportsee.png",    
-        "link": "https://p12-sportsee-ten.vercel.app",
+        "link": "https://p12-sportsee-eta.vercel.app",
         "icons": ["fa-brands fa-react", "fa-brands fa-sass", "fa-brands fa-node"],
         "categories": ["React", "NodeJS", "Sass", "App"]
     },
