@@ -43,7 +43,7 @@
         "title": "Billapp",    
         "description": "Débuggez et testez un SaaS RH",    
         "image": "../assets/img/P9-interfaceBilled.png",    
-        "link": "#",
+        "link": "https://p9-billed-beta.vercel.app/",
         "icons": ["fa-brands fa-html5", "fa-brands fa-css3-alt", "fa-brands fa-js"],
         "categories": ["CSS", "NodeJS", "JS", "App"]
     },
