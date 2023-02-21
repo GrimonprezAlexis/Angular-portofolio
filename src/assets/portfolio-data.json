@@ -16,7 +16,7 @@
         "categories": ["Sass", "App"]
     },
     {    
-        "title": "Créez une landing page avec Javascript",    
+        "title": "Landing page avec Javascript",    
         "description": "GameOn",    
         "image": "../assets/img/P4-GameonWebsite.png",
         "link": "https://github.com/GrimonprezAlexis/P4_GameOnWebsite",
@@ -50,7 +50,7 @@
     {    
         "title": "Kasa",    
         "description": "Location d’appartements entre particuliers",    
-        "image": "https://user.oc-static.com/upload/2022/06/24/16560899769906_FR_811_P8_Banner-Kasa%20%281%29.png",    
+        "image": "../assets/img/Kasa.png",    
         "link": "https://p11-kasa-agr.vercel.app",
         "icons": ["fa-brands fa-react", "fa-brands fa-sass"],
         "categories": ["React", "Sass", "App"]

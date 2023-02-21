@@ -8,11 +8,10 @@
       
       <nav class="nav" aria-label="Site menu" role="navigation">
         <ul>
-          <li><a routerLink="/about">A propos <i class="fa-regular fa-user"></i></a></li>
-          <li><a routerLink="/portfolio">Projets <i class="fa-solid fa-code"></i></a></li>
-          <li><a routerLink="/contact">Contact <i class="fa-solid fa-phone"></i></a></li>
+          <li><a [routerLink]="['/about']" routerLinkActive="router-link-active">A propos <i class="fa-regular fa-user"></i></a></li>
+          <li><a [routerLink]="['/portfolio']" routerLinkActive="router-link-active">Projets <i class="fa-solid fa-code"></i></a></li>
+          <li><a [routerLink]="['/contact']" routerLinkActive="router-link-active">Contact <i class="fa-solid fa-phone"></i></a></li>
           <li><a href="#">CV</a></li>
-          <li><a routerLink="/admin">Admin <i class="fa-solid fa-screwdriver-wrench"></i></a></li>
         </ul>
       </nav> 
       <button class="hamburger-menu" (click)="toggleMenu()">
@@ -25,9 +24,9 @@
 
     <nav class="navigation-mobile" aria-label="Site menu" role="navigation" *ngIf="showMenu">
       <div class="menu__items" *ngIf="showMenu">
-        <a routerLink="/about" class="menu__item">A propos <i class="fa-regular fa-user"></i></a>
-        <a routerLink="/portfolio" class="menu__item">Projets <i class="fa-solid fa-code"></i></a>
-        <a routerLink="/contact" class="menu__item">Contact <i class="fa-solid fa-phone"></i></a>
+        <a [routerLink]="['/about']" routerLinkActive="router-link-active" class="menu__item">A propos <i class="fa-regular fa-user"></i></a>
+        <a [routerLink]="['/portfolio']" routerLinkActive="router-link-active" class="menu__item">Projets <i class="fa-solid fa-code"></i></a>
+        <a [routerLink]="['/contact']" routerLinkActive="router-link-active" class="menu__item">Contact <i class="fa-solid fa-phone"></i></a>
         <a href="#" class="menu__item">CV</a>
       </div>
     </nav>

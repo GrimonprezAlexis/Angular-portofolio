@@ -40,6 +40,7 @@
                     <footer>
                         <p class="project-type">{{ item.title }}</p>
                         <h3 class="project-title">{{ item.description }}</h3>
+                        <i class="{{ icon }}" *ngFor="let icon of item.icons" style="font-size: 1.5rem;     margin-right: 0.35rem;"></i>
                     </footer>
                 </a>
 
