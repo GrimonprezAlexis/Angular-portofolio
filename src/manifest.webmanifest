@@ -3,6 +3,7 @@
     "short_name": "Portfolio AGR",
     "start_url": ".",
     "display": "standalone",
+    "apple-touch-icon": "./assets/icons/apple-touch-icon.png",
     "icons": [
         {
             "src": "./assets/icons/icon-192x192.png",
