@@ -32,7 +32,7 @@
 
 
     <nav class="navigation-mobile" aria-label="Site menu" role="navigation" *ngIf="showMenu">
-      <div class="menu__items" *ngIf="showMenu">
+      <div class="menu__items" *ngIf="showMenu" [class.dark-mode]="darkModeService.isDarkMode">
         <a [routerLink]="['/about']" routerLinkActive="router-link-active" class="menu__item">A propos <i class="fa-regular fa-user"></i></a>
         <a [routerLink]="['/portfolio']" routerLinkActive="router-link-active" class="menu__item">Projets <i class="fa-solid fa-code"></i></a>
         <a [routerLink]="['/contact']" routerLinkActive="router-link-active" class="menu__item">Contact <i class="fa-solid fa-phone"></i></a>
