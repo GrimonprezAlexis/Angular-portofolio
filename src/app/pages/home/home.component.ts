@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { DarkModeService } from 'src/app/services/DarkMode.service';
 
 interface ColumnItems {
   id: number;
@@ -22,7 +23,10 @@ export class HomeComponent {
 
   ngOnInit(): void {}
 
-  constructor(private _router: Router) {}
+  constructor(
+    private _router: Router,
+    public darkModeService: DarkModeService
+  ) {}
 
   onMouseEnter(index: number): void {
     const col = document.querySelectorAll('.col')[index];

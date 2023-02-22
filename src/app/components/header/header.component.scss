@@ -52,7 +52,7 @@ $header-nav-link-color: #777;
         display: flex;
 
         li {
-          margin-left: 4rem;
+          margin-right: 4rem;
           transition:all 0.3s ease-in-out;
           &:hover {
             a {
@@ -205,4 +205,77 @@ $burger-color: #000;
   font-weight: bold;
   border-top: 3px solid $header-color;
   color: $header-color!important;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+
+  input {
+    display: none;
+  }
+
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+
+    .fa-sun, .fa-moon {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    .fa-sun {
+      left: 8px;
+      color: #f1c40f;
+    }
+
+    .fa-moon {
+      right: 10px;
+      color: #f39c12;
+    }
+  }
+
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: #fff;
+    transition: .4s;
+  }
+
+  input:checked + .slider {
+    background-color: #333;
+
+    .fa-sun {
+      opacity: 0;
+    }
+
+    .fa-moon {
+      opacity: 1;
+    }
+  }
+
+  input:checked + .slider:before {
+    transform: translateX(26px);
+  }
+}
+
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
 }

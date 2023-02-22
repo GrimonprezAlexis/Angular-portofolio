@@ -4,6 +4,7 @@ import { CategoryFilters, PortfolioTypes } from 'src/app/interface';
 import { ModalService } from 'src/app/services/modal.service';
 import { ModalEditPortfolioComponent } from 'src/app/components/modal-edit-portfolio/modal-edit-portfolio.component';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
+import { DarkModeService } from 'src/app/services/DarkMode.service';
 
 @Component({
   selector: 'app-portfolio',
@@ -18,7 +19,8 @@ export class PortfolioComponent implements OnInit {
   constructor(
     private _portfolioService: PortfolioService,
     private _modalService: ModalService,
-    public dialog: MatDialog
+    public dialog: MatDialog,
+    public darkModeService: DarkModeService
   ) {}
 
   ngOnInit() {

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { DarkModeService } from 'src/app/services/DarkMode.service';
 
 @Component({
   selector: 'app-header',
@@ -8,12 +9,16 @@ import { Component } from '@angular/core';
 export class HeaderComponent {
   showMenu: boolean = false;
 
-  constructor() {}
+  constructor(public darkModeService: DarkModeService) {}
 
   ngOninit() {}
 
   toggleMenu() {
     this.showMenu = !this.showMenu;
+  }
+
+  toggleDarkMode() {
+    this.darkModeService.toggleDarkMode();
   }
 
   ngOnDestroy() {}

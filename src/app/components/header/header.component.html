@@ -1,4 +1,4 @@
-  <header class="header">
+  <header class="header" [class.dark-mode]="darkModeService.isDarkMode">
     <div class="container">
 
       <div class="container_logo">
@@ -7,13 +7,22 @@
       </div>
       
       <nav class="nav" aria-label="Site menu" role="navigation">
-        <ul>
+        <ul [class.dark-mode]="darkModeService.isDarkMode">
           <li><a [routerLink]="['/about']" routerLinkActive="router-link-active">A propos <i class="fa-regular fa-user"></i></a></li>
           <li><a [routerLink]="['/portfolio']" routerLinkActive="router-link-active">Projets <i class="fa-solid fa-code"></i></a></li>
           <li><a [routerLink]="['/contact']" routerLinkActive="router-link-active">Contact <i class="fa-solid fa-phone"></i></a></li>
           <li><a href="#">CV</a></li>
         </ul>
       </nav> 
+
+      <label class="switch">
+        <input type="checkbox" (click)="toggleDarkMode()">
+        <span class="slider round">
+          <i class="fa fa-sun"></i>
+          <i class="fa fa-moon"></i>
+        </span>
+      </label>
+
       <button class="hamburger-menu" (click)="toggleMenu()">
         <span></span>
         <span></span>
