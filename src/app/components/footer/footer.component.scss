@@ -1,32 +1,47 @@
+@import '../../css//legacy.scss';
 
 .footer-container {
-    background: white;
-    color: #38495a;
-  }
+  background: white;
+  color: #38495a;
+  @extend %fontfamilySecondary;
+}
   
-  .footer-row {
-    display: flex;
-    justify-content: space-around;
-    padding: 2rem;
-  
-    li {
-      list-style: none;
-      font-size: 1rem;
-  
-      a {
-        font-size: 1.2rem;
-        text-decoration: none;
-        color: #38495a;
+.footer-row {
+  display: flex;
+  justify-content: space-around;
+  padding: 2rem;
+
+  li {
+    list-style: none;
+    font-size: 1rem;
+
+    a {
+      font-size: 1.2rem;
+      text-decoration: none;
+      color: #38495a;
+      transition: all 0.3s ease-in-out;
+
+      &:hover {
+          color: #fff;
+          background-color: #38495a;
+          padding: 10px 15px;
+          border-radius: 5px;
       }
+
     }
   }
+}
   
-  .footer-bottom {
-    background-color: #38495a;
-    padding: 10px 0;
-  
-    p {
-      font-size: 0.9rem;
-      text-align: center;
-    }
+.footer-bottom {
+  background-color: #38495a;
+  padding: 10px 0;
+  @extend %fontfamilySecondary;
+
+
+  p {
+    font-size: 0.9rem;
+    text-align: center;
   }
+}
+
+@import './responsive.scss';

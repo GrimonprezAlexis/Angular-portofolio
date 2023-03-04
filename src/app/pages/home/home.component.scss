@@ -1,5 +1,7 @@
+@import '../../css/legacy.scss';
+
 #home {
-    font-family: Georgia;
+    @extend %fontfamilyPrimary;
     box-sizing: border-box;
     background: white;
 }
