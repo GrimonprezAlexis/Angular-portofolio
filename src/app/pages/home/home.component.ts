@@ -30,7 +30,7 @@ export class HomeComponent {
 
   onMouseEnter(index: number): void {
     const col = document.querySelectorAll('.col')[index];
-    col.classList.add('show-image');
+    col?.classList.add('show-image');
   }
 
   onMouseOut(): void {
