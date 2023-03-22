@@ -18,7 +18,7 @@
       <div class="sub_navigation">
         <label class="switch">
           <input type="checkbox" (click)="toggleDarkMode()">
-          <span class="slider round">
+          <span class="slider round" [ngClass]="darkModeService.isDarkMode ? 'dark-theme' : 'light-theme'">
             <i class="fa fa-sun"></i>
             <i class="fa fa-moon"></i>
           </span>
