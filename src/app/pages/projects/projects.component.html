@@ -1,0 +1,32 @@
+<section id="projects">
+  <div class="container">
+      <h2>Mes projets</h2>
+
+      <div class="itemLength" *ngIf="projectsData">
+          <h3>{{ projectsData.length }} / {{ projectsData.length }}</h3>
+      </div>
+
+      <div class="container1">
+        <div class="container2">
+          <div class="cards" *ngFor="let project of projectsData; let i = index">
+            <div
+              class="card"
+              [ngClass]="{
+                'active': i === currentIndex,
+                'left': i < currentIndex,
+                'right': i > currentIndex
+              }"
+              (click)="changeSlide(i)"
+            >
+              <img [src]="project.image" alt="song">
+            </div>
+          </div>
+        </div>
+      </div>
+      
+
+
+  </div>
+</section>
+
+

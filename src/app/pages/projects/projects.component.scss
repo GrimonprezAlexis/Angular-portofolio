@@ -1,0 +1,65 @@
+@import '../../css//legacy.scss';
+
+#projects {
+  @extend %basePage;
+}
+
+.container {
+  @extend %container;
+}
+$card-width: 60%;
+$card-transition-time: 0.4s;
+$container2-max-width: 800px;
+$container2-max-height: 600px;
+$img-width: 100%;
+$img-height: 60vh;
+
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container1 {
+  @include flex-center;
+}
+
+.container2 {
+  width: 100%;
+  max-width: $container2-max-width;
+  max-height: $container2-max-height;
+  height: 100%;
+  transform-style: preserve-3d;
+}
+
+.card {
+  width: $card-width;
+  height: 100%;
+  transition: transform $card-transition-time ease, opacity $card-transition-time ease;
+  cursor: pointer;
+  opacity: 0.4;
+
+  &.active {
+    opacity: 1;
+    z-index: 1;
+  }
+
+  &.left, &.right {
+    transform: translateY(0);
+  }
+}
+
+.cards {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+img {
+  width: $img-width;
+  height: $img-height;
+  border-radius: 10px;
+  object-fit: cover;
+}

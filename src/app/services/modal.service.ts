@@ -6,7 +6,7 @@ import {
   ApplicationRef,
   Type,
 } from '@angular/core';
-import { Observable, Subject } from 'rxjs';
+import { BehaviorSubject, Observable, Subject } from 'rxjs';
 
 interface ModalComponent {
   data: any;
@@ -19,6 +19,7 @@ export class ModalService {
   private modalSubject = new Subject<ComponentRef<any>>();
   private closeModalSubject = new Subject<any>();
   private currentModal: ComponentRef<any> | undefined;
+  private modalOpen$ = new BehaviorSubject<boolean>(false); // Add this line
 
   constructor(
     private componentFactoryResolver: ComponentFactoryResolver,
@@ -36,7 +37,6 @@ export class ModalService {
     ) as ComponentRef<ModalComponent> as ComponentRef<T>;
     this.currentModal = componentRef;
     this.modalSubject.next(componentRef);
-
     return this.afterClosed();
   }
 
@@ -65,5 +65,10 @@ export class ModalService {
 
   afterClosed(): Observable<any> {
     return this.closeModalSubject.asObservable();
+  }
+
+  // Add this method to expose the modalOpen$ subject
+  isModalOpen(): Observable<boolean> {
+    return this.modalOpen$.asObservable();
   }
 }

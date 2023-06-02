@@ -2,11 +2,25 @@
 # RESPONSIVE
 --------------------------------------------------------------*/
 @media screen and (min-width: 320px) and (max-width:992px){
+
+    footer {
+      position: inherit;
+    }
+    .footer-container {
+      display: block;
+      text-align: center;
+
+      p {
+        background: black;
+        display: none;
+      }
+    }
+  
     .footer-row {
       display: flex;
-      flex-wrap: wrap;
-      flex-direction: column;
-      padding: 1rem;
+      padding: 0.1rem;
+      flex-direction: row;
+      justify-content: space-around;
   
       li {
         width: fit-content;

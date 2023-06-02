@@ -16,10 +16,13 @@ import {
 export class ModalEditPortfolioComponent {
   constructor(
     public dialogRef: MatDialogRef<ModalEditPortfolioComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: any
+    @Inject(MAT_DIALOG_DATA) public data: any,
+    private modalService: ModalService
   ) {}
 
-  ngOnInit(): void {
+  isModalOpen = false;
+
+  ngOnInit() {
     console.log('modal', this.data);
   }
 

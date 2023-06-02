@@ -7,12 +7,16 @@
 
 .container {
   @extend %container;
+  max-width: inherit;
 }
 
 #filter {
   display: flex;
   flex-wrap: wrap;
   clear: both;
+  margin: 0;
+  padding: 0;
+  margin: 2rem 0;
 }
 
 .search__filter__title {
@@ -78,8 +82,8 @@
 
 .wrapper-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 2.5rem;
 }
 
 .itemLength {

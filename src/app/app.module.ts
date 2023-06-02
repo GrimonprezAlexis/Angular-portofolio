@@ -13,6 +13,8 @@ import { AboutComponent } from './pages/about/about.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { ModalEditPortfolioComponent } from './components/modal-edit-portfolio/modal-edit-portfolio.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { DarkModeComponent } from './components/darkMode/darkMode.component';
+import { MenuMobileComponent } from './components/menuMobile/menuMobile.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +26,8 @@ import { FooterComponent } from './components/footer/footer.component';
     ContactComponent,
     AboutComponent,
     ModalEditPortfolioComponent,
+    DarkModeComponent,
+    MenuMobileComponent,
   ],
   imports: [
     BrowserModule,

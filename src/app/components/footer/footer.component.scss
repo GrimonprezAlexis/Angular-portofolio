@@ -1,46 +1,44 @@
 @import '../../css//legacy.scss';
 
+
+footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+}
 .footer-container {
-  background: white;
-  color: #38495a;
+  background-color: #38495a;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   @extend %fontfamilySecondary;
 }
   
 .footer-row {
   display: flex;
-  justify-content: space-around;
-  padding: 2rem;
+  padding: 1rem;
+  font-size: 0.9rem;
 
   li {
     list-style: none;
     font-size: 1rem;
+    margin: 0 2rem;
 
     a {
       font-size: 1.2rem;
       text-decoration: none;
-      color: #38495a;
+      color: white;
       transition: all 0.3s ease-in-out;
 
       &:hover {
-          color: #fff;
-          background-color: #38495a;
+          background-color: red;
           padding: 10px 15px;
           border-radius: 5px;
       }
 
     }
-  }
-}
-  
-.footer-bottom {
-  background-color: #38495a;
-  padding: 10px 0;
-  @extend %fontfamilySecondary;
-
-
-  p {
-    font-size: 0.9rem;
-    text-align: center;
   }
 }
 
