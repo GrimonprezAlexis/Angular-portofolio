@@ -1,4 +1,4 @@
-@import '../../css//legacy.scss';
+@import '../../css/legacy.scss';
 
 #projects {
   @extend %basePage;
@@ -6,60 +6,184 @@
 
 .container {
   @extend %container;
+  max-width: inherit;
 }
-$card-width: 60%;
-$card-transition-time: 0.4s;
-$container2-max-width: 800px;
-$container2-max-height: 600px;
-$img-width: 100%;
-$img-height: 60vh;
 
-@mixin flex-center {
+#filter {
   display: flex;
+  flex-wrap: wrap;
+  clear: both;
+  margin: 0;
+  padding: 0;
+  margin: 2rem 0;
+}
+
+.search__filter__title {
+  align-self: center;
+  padding-right: 20px;
+  font-weight: bold;
+  color: $white;
+}
+
+.search__filter__list {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
   justify-content: center;
+
+  li {
+    display: flex;
+    font-weight: bold;
+    align-items: center;
+    margin: 10px;
+    border: 2px solid #f2f2f2;
+    border-radius: 35px;
+    padding-right: 15px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      background: $blue;
+      color: $black;
+      border: 1px solid $black;
+
+      .search__filter__icon {
+        background: $black;
+        color: $blue;
+      }
+    }
+  }
+}
+
+.search__filter__icon {
+  display: flex;
+  background: $white;
+  color: #111;
+  border-radius: 50%;
   align-items: center;
+  margin: -2px;
+  min-height: 3rem;
+  min-width: 3rem;
+  justify-content: center;
+  transition: background-color 0.3s ease;
+
+  /** Force size icon Fontawesome */
+  i {
+    font-size: 1.3rem;
+    margin: 0 0.25em;
+  }
 }
 
-.container1 {
-  @include flex-center;
+.search__filter__text {
+  padding-left: 12px;
+  color: $white;
 }
 
-.container2 {
-  width: 100%;
-  max-width: $container2-max-width;
-  max-height: $container2-max-height;
-  height: 100%;
-  transform-style: preserve-3d;
+.wrapper-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 2.5rem;
+}
+
+.itemLength {
+  text-align: center;
+  padding-bottom: 1rem;
+  font-size: 20px;
 }
 
 .card {
-  width: $card-width;
+  max-width: 100%;
   height: 100%;
-  transition: transform $card-transition-time ease, opacity $card-transition-time ease;
-  cursor: pointer;
-  opacity: 0.4;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  animation: fade-item-menu 1s linear;
+  -moz-animation: fade-item-menu .6s; // Firefox
+  -webkit-animation: fade-item-menu .6s; // Safari et Chrome
+  -o-animation: fade-item-menu .6s; // Opera
+  animation-fill-mode: both;
+}
 
-  &.active {
-    opacity: 1;
-    z-index: 1;
+.image-container {
+  position: relative;
+
+  img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    height: 350px;
+    width: 100%;
+    object-fit: cover;
   }
 
-  &.left, &.right {
-    transform: translateY(0);
+  &:hover .overlay {
+    opacity: 1;
   }
 }
 
-.cards {
-  position: relative;
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  background: rgba(0, 0, 0, 0.5);
   display: flex;
   align-items: center;
+  justify-content: center;
+
+  .icon {
+    display: inline-block;
+    margin-right: 10px;
+
+    i {
+      font-size: 3.5rem;
+      margin: 0 0.25em;
+      color: $white;
+    }
+  }
 }
 
-img {
-  width: $img-width;
-  height: $img-height;
-  border-radius: 10px;
-  object-fit: cover;
+footer {
+  padding: 20px;
+  margin-top: -3px;
 }
+
+.project-type {
+  opacity: 65%;
+}
+
+.project-title {
+  @extend %fontfamilySecondary;
+  font-weight: 600;
+  font-size: 17px;
+  margin-block: 14px 10px;
+}
+
+#projects>div>div>div:nth-child(8)>a>footer {
+  background: #ff0100;
+}
+#projects>div>div>div:nth-child(7)>a>footer {
+  background: #ff6060;
+}
+#projects>div>div>div:nth-child(6)>a>footer {
+  background: #34a393;
+}
+#projects>div>div>div:nth-child(5)>a>footer {
+  background: #b9b95b;
+}
+#projects>div>div>div:nth-child(4)>a>footer {
+  background: #90725d;
+}
+#projects>div>div>div:nth-child(3)>a>footer {
+  background: #adbbbd;
+}
+#projects>div>div>div:nth-child(2)>a>footer {
+  background: #e0a876;
+}
+#projects>div>div>div:first-child>a>footer {
+  background: #aa4c20;
+}
+
+@import './responsive.scss';

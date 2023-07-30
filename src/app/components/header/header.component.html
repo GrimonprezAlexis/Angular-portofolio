@@ -9,10 +9,10 @@
       <nav class="nav" aria-label="Site menu" role="navigation">
         <ul [class.dark-mode]="darkModeService.isDarkMode">
           <li><a [routerLink]="['/about']" routerLinkActive="router-link-active">A propos</a></li>
-          <li><a [routerLink]="['/portfolio']" routerLinkActive="router-link-active">Projets</a></li>
+          <li><a [routerLink]="['/projects']" routerLinkActive="router-link-active">Projets</a></li>
           <li><a [routerLink]="['/contact']" routerLinkActive="router-link-active">Contact</a></li>
           <li><a href="#">CV</a></li>
-          <li><a href="#">Connexion <i class="fa-regular fa-user"></i></a></li>
+          <li><a [routerLink]="['/login']">Connexion <i class="fa-regular fa-user"></i></a></li>
         </ul>
       </nav> 
 

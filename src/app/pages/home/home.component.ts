@@ -28,6 +28,8 @@ export class HomeComponent {
     public darkModeService: DarkModeService
   ) {}
 
+  isLoading: boolean = true;
+
   onMouseEnter(index: number): void {
     const col = document.querySelectorAll('.col')[index];
     col?.classList.add('show-image');

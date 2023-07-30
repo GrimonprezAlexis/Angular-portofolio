@@ -1,4 +1,4 @@
-export interface PortfolioTypes {
+export interface ProjectsTypes {
   title: string;
   description: string;
   image: File;

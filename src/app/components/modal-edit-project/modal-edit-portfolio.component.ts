@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Inject, Input, Output } from '@angular/core';
-import { PortfolioTypes } from 'src/app/interface';
+import { ProjectsTypes } from 'src/app/interface';
 import { ModalService } from 'src/app/services/modal.service';
 import { FormGroup, FormControl } from '@angular/forms';
 import {

@@ -1,32 +1,56 @@
-<section id="projects">
-  <div class="container">
-      <h2>Mes projets</h2>
+<app-loader [isLoading]="isLoading" />
 
-      <div class="itemLength" *ngIf="projectsData">
-          <h3>{{ projectsData.length }} / {{ projectsData.length }}</h3>
-      </div>
+<section class="suggestions" id="projects">
+    <div class="container">
+        <h2>Mes projets</h2>
 
-      <div class="container1">
-        <div class="container2">
-          <div class="cards" *ngFor="let project of projectsData; let i = index">
-            <div
-              class="card"
-              [ngClass]="{
-                'active': i === currentIndex,
-                'left': i < currentIndex,
-                'right': i > currentIndex
-              }"
-              (click)="changeSlide(i)"
-            >
-              <img [src]="project.image" alt="song">
-            </div>
-          </div>
+        <!-- FILTERS-->
+        <section class="container" id="filter">
+            <h3 class="search__filter__title">Filtres</h3>
+            <ul class="search__filter__list">
+                <li *ngFor="let categoryFilter of categoryFilters" (click)="setCurrentCategory(categoryFilter.label)">
+                    <span class="search__filter__icon">
+                        <i class="{{ categoryFilter.icon }}"></i>
+                    </span>
+                    <span class="search__filter__text">{{ categoryFilter.label }}</span>
+                </li>
+            </ul>
+        </section>
+
+        <div class="itemLength" *ngIf="projectsData">
+            <h3>{{ getFilteredItemList().length }} / {{ projectsData.length }}</h3>
         </div>
-      </div>
-      
+
+        <div class="wrapper-grid">
+            <div 
+                class="card fade-in-delay-{{ i }}" 
+                *ngFor="let item of getFilteredItemList(); let i = index"
+                (onClick)="selectItem(i)"
+            >
+                <button (click)="editItem(i)">Edit</button>
 
 
-  </div>
+                <a [href]="item.link" class="item-overlay">
+                    <div class="image-container">
+                        <img loading="lazy" [src]="item.image" [alt]="item.title">
+
+                        <div class="overlay">
+                              <span class="icon" *ngFor="let icon of item.icons">
+                                <i class="{{ icon }}"></i>
+                              </span>
+                        </div>
+                    </div>
+
+                    <footer [class.dark-mode]="darkModeService.isDarkMode">
+                        <p class="project-type">{{ item.title }}</p>
+                        <h3 class="project-title">{{ item.description }}</h3>
+                        <i class="{{ icon }}" *ngFor="let icon of item.icons" style="font-size: 1.5rem;     margin-right: 0.35rem;"></i>
+                    </footer>
+                </a>
+            </div>
+        </div>
+
+    </div>
 </section>
 
 
