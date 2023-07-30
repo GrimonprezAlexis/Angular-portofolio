@@ -7,14 +7,15 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { HomeComponent } from './pages/home/home.component';
-import { PortfolioComponent } from './pages/portfolio/portfolio.component';
 import { ContactComponent } from './pages/contact/contact.component';
 import { AboutComponent } from './pages/about/about.component';
 import { MatDialogModule } from '@angular/material/dialog';
-import { ModalEditPortfolioComponent } from './components/modal-edit-portfolio/modal-edit-portfolio.component';
+import { ModalEditPortfolioComponent } from './components/modal-edit-project/modal-edit-portfolio.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { DarkModeComponent } from './components/darkMode/darkMode.component';
 import { MenuMobileComponent } from './components/menuMobile/menuMobile.component';
+import { LoaderComponent } from './components/loader/loader.component';
+import { ProjectsComponent } from './pages/projects/projects.component';
 
 @NgModule({
   declarations: [
@@ -22,12 +23,13 @@ import { MenuMobileComponent } from './components/menuMobile/menuMobile.componen
     HomeComponent,
     HeaderComponent,
     FooterComponent,
-    PortfolioComponent,
+    ProjectsComponent,
     ContactComponent,
     AboutComponent,
     ModalEditPortfolioComponent,
     DarkModeComponent,
     MenuMobileComponent,
+    LoaderComponent,
   ],
   imports: [
     BrowserModule,
