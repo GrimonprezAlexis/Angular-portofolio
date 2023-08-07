@@ -1,5 +1,7 @@
 import { Component, Output } from '@angular/core';
-import { CategoryFilters, ProjectsTypes } from 'src/app/interface';
+import { ActivatedRoute, Router } from '@angular/router';
+import { ProjectModalComponent } from 'src/app/components/projectModal/project-modal.component';
+import { ProjectTypes } from 'src/app/interface';
 import { DarkModeService } from 'src/app/services/DarkMode.service';
 import { ModalService } from 'src/app/services/modal.service';
 import { ProjectsService } from 'src/app/services/projects.service';
@@ -10,98 +12,73 @@ import { ProjectsService } from 'src/app/services/projects.service';
   styleUrls: ['./projects.component.scss'],
 })
 export class ProjectsComponent {
-  projectsData: ProjectsTypes[] = []; // Initialize as an empty array
+  projects: ProjectTypes[] = []; // Initialize as an empty array
   currentCategory: string = 'All';
+  selectedProject: ProjectTypes | undefined;
+
   @Output() isLoading: boolean = true;
 
   constructor(
     private _projectsService: ProjectsService,
     private _modalService: ModalService,
-    public darkModeService: DarkModeService
+    public darkModeService: DarkModeService,
+    private _router: Router,
+    private _route: ActivatedRoute
   ) {}
 
   ngOnInit() {
+    this.fetchProjects();
+  }
+
+  private fetchProjects() {
     this._projectsService.getAllProjects().subscribe({
       next: (data) => {
-        this.projectsData = data;
-        this.isLoading = false; // Set isLoading to false when the data is loaded successfully
+        this.projects = data;
+        this.handleRouteParams();
+        this.isLoading = false;
       },
       error: (error) => {
         console.error('Error fetching portfolio data:', error);
-        this.isLoading = false; // Set isLoading to false even if there's an error (to hide the loader)
+        this.isLoading = false;
       },
     });
   }
 
-  categoryFilters: CategoryFilters[] = [
-    {
-      label: 'All',
-      icon: 'fa fa-star',
-      category: 'All',
-    },
-    {
-      label: 'CSS',
-      icon: 'fa fa-star',
-      category: 'CSS',
-    },
-    {
-      label: 'JS',
-      icon: 'fa-brands fa-js',
-      category: 'JS',
-    },
-    {
-      label: 'React',
-      icon: 'fa-brands fa-react',
-      category: 'React',
-    },
-    {
-      label: 'Angular',
-      icon: 'fa-brands fa-angular',
-      category: 'Angular',
-    },
-    {
-      label: 'Sass',
-      icon: 'fa-brands fa-sass',
-      category: 'Sass',
-    },
-    {
-      label: 'NodeJS',
-      icon: 'fa-brands fa-node-js',
-      category: 'NodeJS',
-    },
-  ];
-
-  setCurrentCategory(category: string) {
-    this.currentCategory = category;
+  private navigateToProject(projectId: number): void {
+    //this._router.navigate(['/projects', projectId]);
   }
 
-  getFilteredItemList() {
+  private handleRouteParams() {
+    this._route.params.subscribe((params) => {
+      const projectId = Number(params['id']);
+      this.openProjectModal(projectId);
+    });
+  }
+
+  updateCurrentCategory(event: any) {
+    this.currentCategory = event;
+  }
+
+  getFilteredProjectList() {
     if (!this.currentCategory || this.currentCategory === 'All') {
-      return this.projectsData;
+      return this.projects;
     } else {
-      return this.projectsData.filter(
-        (item: { categories: (string | null)[] }) =>
-          item.categories.includes(this.currentCategory)
+      return this.projects.filter((item: { categories: (string | null)[] }) =>
+        item.categories.includes(this.currentCategory)
       );
     }
   }
 
-  newItem: ProjectsTypes | null = null;
-
-  selectItem(index: number) {
-    console.log('Selected Item:', index);
+  openProjectModal(projectId: number) {
+    const modalRef = this._modalService.openModal(ProjectModalComponent, {
+      data: this.projects.find((project) => project.id === projectId),
+    });
+    console.log(modalRef);
   }
 
-  editItem(index: number) {
-    //this.dialogConfig.data = this.projectsData[index];
-    // const modalRef = this.dialog.open(
-    //   ModalEditProjectsComponent,
-    //   this.dialogConfig
-    // );
-    // modalRef.afterClosed().subscribe((result: any) => {
-    //   if (result !== null) {
-    //     this.projectsData[index] = result;
-    //   }
-    // });
+  selectProject(selectedProject: ProjectTypes): void {
+    this.selectedProject = selectedProject;
+    this.openProjectModal(selectedProject.id);
+    this.navigateToProject(selectedProject.id);
   }
 }

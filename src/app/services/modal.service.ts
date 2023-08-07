@@ -19,7 +19,7 @@ export class ModalService {
   private modalSubject = new Subject<ComponentRef<any>>();
   private closeModalSubject = new Subject<any>();
   private currentModal: ComponentRef<any> | undefined;
-  private modalOpen$ = new BehaviorSubject<boolean>(false); // Add this line
+  private modalOpen$ = new BehaviorSubject<boolean>(false);
 
   constructor(
     private componentFactoryResolver: ComponentFactoryResolver,
@@ -37,6 +37,7 @@ export class ModalService {
     ) as ComponentRef<ModalComponent> as ComponentRef<T>;
     this.currentModal = componentRef;
     this.modalSubject.next(componentRef);
+    this.modalOpen$.next(true); // Notify that the modal is open
     return this.afterClosed();
   }
 
@@ -56,18 +57,21 @@ export class ModalService {
   }
 
   closeModal(result?: any) {
-    this.closeModalSubject.next(result);
-    this.closeModalSubject.complete();
     if (this.currentModal) {
-      this.modalSubject.next(this.currentModal); // Notify subscribers that the modal has been closed
+      this.appRef.detachView(this.currentModal.hostView); // Detach the modal component from the view
+      this.currentModal.destroy(); // Destroy the modal component
+      this.currentModal = undefined; // Clear the current modal reference
     }
+
+    this.closeModalSubject.next(result || null); // Emit a value to the subject
+    this.closeModalSubject.complete();
+    this.modalOpen$.next(false); // Notify that the modal is closed
   }
 
   afterClosed(): Observable<any> {
     return this.closeModalSubject.asObservable();
   }
 
-  // Add this method to expose the modalOpen$ subject
   isModalOpen(): Observable<boolean> {
     return this.modalOpen$.asObservable();
   }

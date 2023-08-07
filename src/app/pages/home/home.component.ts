@@ -16,7 +16,7 @@ interface ColumnItems {
 export class HomeComponent {
   columnItems: ColumnItems[] = [
     { id: 1, label: 'A propos', link: 'about' },
-    { id: 2, label: 'Projets', link: 'portfolio' },
+    { id: 2, label: 'Projets', link: 'projects' },
     { id: 3, label: 'Contact', link: 'contact' },
     { id: 4, label: 'CV', link: '' },
   ];

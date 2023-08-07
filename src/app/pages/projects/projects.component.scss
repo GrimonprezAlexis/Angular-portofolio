@@ -2,6 +2,7 @@
 
 #projects {
   @extend %basePage;
+  background-color: white;
 }
 
 .container {
@@ -9,79 +10,18 @@
   max-width: inherit;
 }
 
-#filter {
-  display: flex;
-  flex-wrap: wrap;
-  clear: both;
-  margin: 0;
-  padding: 0;
-  margin: 2rem 0;
-}
-
-.search__filter__title {
-  align-self: center;
-  padding-right: 20px;
-  font-weight: bold;
-  color: $white;
-}
-
-.search__filter__list {
-  display: flex;
-  flex-wrap: wrap;
-  margin: 0;
-  justify-content: center;
-
-  li {
-    display: flex;
-    font-weight: bold;
-    align-items: center;
-    margin: 10px;
-    border: 2px solid #f2f2f2;
-    border-radius: 35px;
-    padding-right: 15px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-
-    &:hover {
-      background: $blue;
-      color: $black;
-      border: 1px solid $black;
-
-      .search__filter__icon {
-        background: $black;
-        color: $blue;
-      }
-    }
-  }
-}
-
-.search__filter__icon {
-  display: flex;
-  background: $white;
-  color: #111;
-  border-radius: 50%;
-  align-items: center;
-  margin: -2px;
-  min-height: 3rem;
-  min-width: 3rem;
-  justify-content: center;
-  transition: background-color 0.3s ease;
-
-  /** Force size icon Fontawesome */
-  i {
-    font-size: 1.3rem;
-    margin: 0 0.25em;
-  }
-}
-
-.search__filter__text {
-  padding-left: 12px;
-  color: $white;
+.title {
+  color: $black2;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 44px;
+  letter-spacing: .0025em;
 }
 
 .wrapper-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 2.5rem;
 }
 
@@ -148,6 +88,7 @@
 footer {
   padding: 20px;
   margin-top: -3px;
+  color: $black2;
 }
 
 .project-type {

@@ -1,4 +1,5 @@
-export interface ProjectsTypes {
+export interface ProjectTypes {
+  id: number;
   title: string;
   description: string;
   image: File;
@@ -11,4 +12,25 @@ export interface CategoryFilters {
   label: string;
   icon: string;
   category: string;
+}
+
+interface ModalComponent {
+  data?: any;
+}
+
+//SOON
+export interface ProjectsDetails {
+  id: number;
+  title: string;
+  description: string;
+  role: string;
+  maquetteUrl?: string;
+  projectDetails: string;
+  objective: string;
+  resources?: string[];
+  constraints?: string[];
+  deliverables?: string[];
+  technologies: string[];
+  hosting?: string;
+  maquetteImage?: File;
 }
