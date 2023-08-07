@@ -16,6 +16,8 @@ import { DarkModeComponent } from './components/darkMode/darkMode.component';
 import { MenuMobileComponent } from './components/menuMobile/menuMobile.component';
 import { LoaderComponent } from './components/loader/loader.component';
 import { ProjectsComponent } from './pages/projects/projects.component';
+import { ProjectModalComponent } from './components/project-modal/project-modal.component';
+import { FilterCarouselComponent } from './components/filter-carousel/filter-carousel.component';
 
 @NgModule({
   declarations: [
@@ -30,13 +32,15 @@ import { ProjectsComponent } from './pages/projects/projects.component';
     DarkModeComponent,
     MenuMobileComponent,
     LoaderComponent,
+    //ProjectModalComponent,
+    FilterCarouselComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    MatDialogModule,
+    //MatDialogModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

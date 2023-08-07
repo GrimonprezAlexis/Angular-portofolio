@@ -11,7 +11,9 @@ const routes: Routes = [
   { path: 'about', component: AboutComponent },
   { path: 'contact', component: ContactComponent },
   { path: 'projects', component: ProjectsComponent },
+  { path: 'projects/:id', component: ProjectsComponent },
   { path: 'login', component: LoginComponent },
+  { path: '**', redirectTo: '', pathMatch: 'full' }, // Redirect to the home page for any unknown routes
 ];
 
 @NgModule({

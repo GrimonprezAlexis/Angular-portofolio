@@ -1,0 +1,28 @@
+<!-- FILTERS-->
+
+<section class="container" id="filter">
+
+    <div class="arrow left">
+        <i class="fa fa-chevron-left"></i>
+    </div>
+
+    <div class="carousel-container">    
+        <ul class="search__filter__list" #categoryList>
+            <li 
+                *ngFor="let cat of categories; let i = index" 
+                drag-scroll-item 
+                (click)="setCurrentCategory(cat.label)" 
+                [ngClass]="{ 'isActive': cat.label === currentCategory }"
+            >
+              <span class="search__filter__title">{{ cat.label }}</span>
+              <span class="search__filter__icon">
+                <i class="{{ cat.icon }}"></i>
+              </span>
+            </li>
+          </ul>
+      </div>
+
+      <div class="arrow right">
+        <i class="fa fa-chevron-right"></i>
+    </div>
+</section>

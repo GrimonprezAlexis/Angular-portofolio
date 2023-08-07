@@ -4,7 +4,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root',
 })
 export class DarkModeService {
-  isDarkMode = true;
+  isDarkMode = false;
 
   constructor() {
     this.updateTheme();
@@ -12,7 +12,9 @@ export class DarkModeService {
 
   private updateTheme(): void {
     const hours = new Date().getHours();
-    this.isDarkMode = hours >= 17 || hours <= 5; // Dark mode from 6 PM to 6 AM
+    console.log('hours', hours);
+    this.isDarkMode = hours >= 6 && hours <= 10; // Dark mode from 6 PM to 6 AM
+    console.log('isDarkMode', this.isDarkMode);
   }
 
   toggleDarkMode() {

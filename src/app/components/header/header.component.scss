@@ -3,7 +3,7 @@
 /*--------------------------------------------------------------
 # HEADER SCSS
 --------------------------------------------------------------*/
-$header-background-color: #fff;
+$header-background-color: rgb(252, 251, 250);
 $header-color: #38495a;
 $header-nav-link-color: #777;
 
@@ -17,6 +17,7 @@ $header-nav-link-color: #777;
 }
 
 .header {
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
   background-color: $header-background-color;
   color: $header-color;
   position: fixed;
