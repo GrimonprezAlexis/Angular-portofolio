@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { DarkModeService } from 'src/app/services/DarkMode.service';
+import { DarkModeService } from 'src/app/services/darkmode/DarkMode.service';
 
 @Component({
   selector: 'app-footer',

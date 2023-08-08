@@ -1,4 +1,4 @@
-import { DarkModeService } from './../../services/DarkMode.service';
+import { DarkModeService } from './../../services/darkmode/DarkMode.service';
 import {
   Component,
   EventEmitter,

@@ -10,12 +10,12 @@ import {
   ViewChild,
 } from '@angular/core';
 import { CategoryFilters } from 'src/app/interface';
-import { DarkModeService } from 'src/app/services/DarkMode.service';
+import { DarkModeService } from 'src/app/services/darkmode/DarkMode.service';
 
 @Component({
   selector: 'app-filter-carousel',
-  templateUrl: './filter-carousel.component.html',
-  styleUrls: ['./filter-carousel.component.scss'],
+  templateUrl: './filterCarousel.component.html',
+  styleUrls: ['./filterCarousel.component.scss'],
 })
 export class FilterCarouselComponent {
   @Input() currentCategory: string | undefined;

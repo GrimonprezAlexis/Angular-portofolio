@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { ActivatedRouteSnapshot, Resolve } from '@angular/router';
 import { Observable } from 'rxjs';
 import { ProjectTypes } from '../interface';
-import { ProjectsService } from '../services/projects.service';
+import { ProjectsService } from '../services/projects/Projects.service';
 
 @Injectable({
   providedIn: 'root',

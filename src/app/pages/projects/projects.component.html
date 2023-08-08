@@ -1,6 +1,6 @@
 <app-loader [isLoading]="isLoading" />
 
-<app-project-modal *ngIf="selectedProject" [data]="selectedProject"/>  
+<app-modalProject *ngIf="selectedProject" [data]="selectedProject"/>
 
 <section class="suggestions" id="projects" [class.dark-mode]="darkModeService.isDarkMode">
     <div class="container">

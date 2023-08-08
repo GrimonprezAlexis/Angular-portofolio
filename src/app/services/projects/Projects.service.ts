@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { catchError, map } from 'rxjs/operators';
 import { of } from 'rxjs';
-import { ProjectTypes, ProjectsDetails } from '../interface'; // Update the interface name
+import { ProjectTypes, ProjectsDetails } from '../../interface'; // Update the interface name
 
 @Injectable({
   providedIn: 'root',

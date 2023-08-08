@@ -6,7 +6,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { DarkModeComponent } from './components/darkMode/darkMode.component';
-import { FilterCarouselComponent } from './components/filter-carousel/filter-carousel.component';
+import { FilterCarouselComponent } from './components/filterCarousel/filterCarousel.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { HeaderComponent } from './components/header/header.component';
 import { LoaderComponent } from './components/loader/loader.component';
@@ -16,8 +16,9 @@ import { AboutComponent } from './pages/about/about.component';
 import { ContactComponent } from './pages/contact/contact.component';
 import { HomeComponent } from './pages/home/home.component';
 import { ProjectsComponent } from './pages/projects/projects.component';
-import { ProjectModalComponent } from './components/projectModal/project-modal.component';
-import { ModalService } from './services/modal.service';
+import { ModalService } from './providers/modal/Modal.service';
+import { ModalProjectComponent } from './components/modalProject/modalProject.component';
+import { ModalCloseService } from './providers/modal/ModalClose.service';
 
 @NgModule({
   declarations: [
@@ -32,16 +33,10 @@ import { ModalService } from './services/modal.service';
     MenuMobileComponent,
     LoaderComponent,
     FilterCarouselComponent,
-    ProjectModalComponent,
+    ModalProjectComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    HttpClientModule,
-    FormsModule,
-    //MatDialogModule,
-  ],
-  providers: [ModalService],
+  imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
+  providers: [ModalService, ModalCloseService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

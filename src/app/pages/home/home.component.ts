@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { DarkModeService } from 'src/app/services/DarkMode.service';
+import { DarkModeService } from 'src/app/services/darkmode/DarkMode.service';
 
 interface ColumnItems {
   id: number;
