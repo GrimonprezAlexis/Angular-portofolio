@@ -1,16 +1,15 @@
 <!-- FILTERS-->
 
-<section class="container" id="filter">
+<section class="container slider-container" id="filter">
 
     <div class="arrow left">
         <i class="fa fa-chevron-left"></i>
     </div>
 
-    <div class="carousel-container">    
+    <div class="carousel-container">
         <ul class="search__filter__list" #categoryList>
             <li 
                 *ngFor="let cat of categories; let i = index" 
-                drag-scroll-item 
                 (click)="setCurrentCategory(cat.label)" 
                 [ngClass]="{ 'isActive': cat.label === currentCategory }"
             >

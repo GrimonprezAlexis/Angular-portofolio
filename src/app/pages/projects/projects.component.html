@@ -16,6 +16,8 @@
                 class="card fade-in-delay-{{ i }}" 
                 *ngFor="let project of getFilteredProjectList(); let i = index"
             >
+                <div class="bar"><h2>{{ project.title }}</h2><i></i></div>
+
                 <div 
                 [routerLink]="['/projects', project.id]"
                 class="project-overlay">

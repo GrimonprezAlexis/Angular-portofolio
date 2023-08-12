@@ -25,6 +25,57 @@
   gap: 2.5rem;
 }
 
+.bar {
+  display: block;
+  position: relative;
+  height: 24px;
+  background-color: #ddd;
+  width: 100%;
+  color: $black2;
+
+  h2 {
+    content: attr(data-text);
+    text-align: center;
+    font-size: 12px;
+    text-transform: uppercase;
+    font-weight: 700;
+    line-height: 26px;
+    color: $black2;
+  }
+
+  i {
+    height: 12px;
+    width: 12px;
+    display: inline-block;
+    background-color: #ff5f57;
+    border-radius: 50%;
+    position: absolute;
+    top: 6px;
+    left: 10px;
+
+    &:before,
+    &:after {
+      content: " ";
+      height: 12px;
+      width: 12px;
+      display: inline-block;
+      border-radius: 50%;
+      position: absolute;
+      top: 0;
+    }
+
+    &:before {
+      left: 16px;
+      background-color: #ffbd2e;
+    }
+
+    &:after {
+      left: 32px;
+      background-color: #28ca41;
+    }
+  }
+}
+
 .itemLength {
   text-align: center;
   padding-bottom: 1rem;

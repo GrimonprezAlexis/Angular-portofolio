@@ -59,6 +59,17 @@ export class FilterCarouselComponent {
       icon: 'fa-brands fa-node-js',
       category: 'NodeJS',
     },
+    // { label: 'SHOW ALL', category: '', icon: '' },
+    // { label: 'FRONT-END', category: '', icon: '' },
+    // { label: 'BACK-END', category: '', icon: '' },
+    // { label: 'HTML5', category: '', icon: '' },
+    // { label: 'SASS', category: '', icon: '' },
+    // { label: 'JAVASCRIPT', category: '', icon: '' },
+    // { label: 'NODEJS', category: '', icon: '' },
+    // { label: 'REACTJS', category: '', icon: '' },
+    // { label: 'MONGODB', category: '', icon: '' },
+    // { label: 'MYSQL', category: '', icon: '' },
+    // { label: 'UI/UX DESIGN', category: '', icon: '' },
   ];
 
   constructor(
@@ -68,18 +79,5 @@ export class FilterCarouselComponent {
 
   setCurrentCategory(category: string) {
     this.newCurrentCategory.emit(category);
-  }
-
-  onWheel(event: WheelEvent): void {
-    if (event.deltaY > 0) this.scrollToRight();
-    else this.scrollToLeft();
-  }
-
-  scrollToLeft(): void {
-    console.log('test');
-  }
-
-  scrollToRight(): void {
-    console.log('test 2');
   }
 }
