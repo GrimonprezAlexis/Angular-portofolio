@@ -1,11 +1,13 @@
 export interface ProjectTypes {
-  id: number;
+  id: string;
   title: string;
+  subtitle: string;
+  job: string;
+  technologies: string[];
   description: string;
-  image: File;
-  link: string;
+  tags: string[];
   icons: string[];
-  categories: string[];
+  imagesUrl: string[];
 }
 
 export interface CategoryFilters {
