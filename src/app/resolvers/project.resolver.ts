@@ -11,7 +11,7 @@ export class ProjectResolver implements Resolve<ProjectTypes> {
   constructor(private projectService: ProjectsService) {}
 
   resolve(route: ActivatedRouteSnapshot): Observable<ProjectTypes | any> {
-    const projectId = Number(route.paramMap.get('id')); // Convert the string to a number
+    const projectId = String(route.paramMap.get('id')); // Convert the string to a number
     return this.projectService.getProjectById(projectId);
   }
 }

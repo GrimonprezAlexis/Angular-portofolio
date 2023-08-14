@@ -32,8 +32,8 @@
                     </div>
 
                     <footer [class.dark-mode]="darkModeService.isDarkMode">
-                        <p class="project-type">{{ project.title }}</p>
                         <h3 class="project-title">{{ project.description }}</h3>
+                        <p class="project-type">{{ project.title }}</p>
                         <i class="{{ icon }}" *ngFor="let icon of project.icons" style="font-size: 1.5rem;     margin-right: 0.35rem;"></i>
                     </footer>
                 </div>

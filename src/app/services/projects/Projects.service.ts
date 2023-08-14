@@ -1,8 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { catchError, map } from 'rxjs/operators';
-import { of } from 'rxjs';
-import { ProjectTypes, ProjectsDetails } from '../../interface'; // Update the interface name
+import { catchError } from 'rxjs/operators';
+import { Observable, of } from 'rxjs';
+import { ProjectTypes } from '../../interface'; // Update the interface name
 
 @Injectable({
   providedIn: 'root',
@@ -10,36 +10,31 @@ import { ProjectTypes, ProjectsDetails } from '../../interface'; // Update the i
 export class ProjectsService {
   constructor(private _http: HttpClient) {}
 
-  getAllProjects() {
-    return this._http.get<ProjectTypes[]>('assets/portfolio-data.json').pipe(
-      catchError((error) => {
-        console.error('Error fetching portfolio data:', error);
-        return of([]); // Return an empty array in case of error
-      })
+  private apiBaseUrl = 'http://localhost:3000/api';
+
+  getProjects(): Observable<ProjectTypes[]> {
+    return this._http.get<ProjectTypes[]>(`${this.apiBaseUrl}/projects`);
+  }
+
+  getProjectById(id: string): Observable<ProjectTypes> {
+    return this._http.get<ProjectTypes>(`${this.apiBaseUrl}/projects/${id}`);
+  }
+
+  createProject(project: ProjectTypes): Observable<ProjectTypes> {
+    return this._http.post<ProjectTypes>(
+      `${this.apiBaseUrl}/projects`,
+      project
     );
   }
 
-  getProjectsDetails() {
-    return this._http
-      .get<ProjectsDetails[]>('assets/projects-details.json')
-      .pipe(
-        catchError((error) => {
-          console.error('Error fetching portfolio data:', error);
-          return of([]); // Return an empty array in case of error
-        })
-      );
-  }
-
-  getProjectById(id: number) {
-    return this.getAllProjects().pipe(
-      map((projects) => projects.find((project) => project.id === id))
+  updateProject(id: string, project: ProjectTypes): Observable<ProjectTypes> {
+    return this._http.put<ProjectTypes>(
+      `${this.apiBaseUrl}/projects/${id}`,
+      project
     );
   }
 
-  //Soon
-  // getProjectById(id: number) {
-  //   return this.getProjectsDetails().pipe(
-  //     map((projects) => projects.find((project) => project.id === id))
-  //   );
-  // }
+  deleteProject(id: string): Observable<any> {
+    return this._http.delete<any>(`${this.apiBaseUrl}/projects/${id}`);
+  }
 }

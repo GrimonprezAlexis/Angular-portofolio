@@ -18,6 +18,12 @@ interface ModalComponent {
   data?: any;
 }
 
+export interface Config {
+  PORT: number;
+  MONGO_URI: string;
+  API_URL: string;
+}
+
 //SOON
 export interface ProjectsDetails {
   id: number;

@@ -1,0 +1,82 @@
+[
+  {
+    "title": "Projet 2 - Transformez une maquette en site web",
+    "subtitle": "Réservia - Outil de planification de vacances",
+    "technologies": "HTML, CSS, Font Awesome, Github",
+    "description": "Responsive website based on a provided design.",
+    "links": {
+      "repository": "https://github.com/GrimonprezAlexis/GrimonprezAlexis_2_06022021",
+      "maquette": "https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/Front-End+V2/P2+HTML+%26+CSS/Projet+2+-+Reservia+FR.zip"
+    }
+  },
+  {
+    "title": "Projet 3 - Dynamisez une page web avec des animations CSS",
+    "subtitle": "Ohmyfood - Entreprise de commande de repas en ligne",
+    "technologies": "HTML, CSS, SASS, Font Awesome, Github",
+    "description": "Create a mobile-responsive website with animations.",
+    "links": {
+      "repository": "https://github.com/your-repo-link",
+      "maquette": "https://your-maquette-link"
+    }
+  },
+  {
+    "title": "Projet 4 - Créez une landing page avec Javascript",
+    "subtitle": "GameOn - Conférences et concours de jeux",
+    "technologies": "HTML, CSS, Javascript, Github",
+    "description": "Implement JavaScript functionality for a landing page.",
+    "links": {
+      "repository": "https://github.com/your-repo-link",
+      "maquette": "https://your-maquette-link"
+    }
+  },
+  {
+    "title": "Projet 6 - Créez un site accessible pour une plateforme de photographes",
+    "subtitle": "FishEye - Présentation des travaux de photographes",
+    "technologies": "HTML, CSS, Javascript, Github",
+    "description": "Develop an accessible website to showcase photographers' work.",
+    "links": {
+      "repository": "https://github.com/your-repo-link",
+      "maquette": "https://your-maquette-link"
+    }
+  },
+  {
+    "title": "Projet 7 - Développez un algorithme de recherche en JavaScript",
+    "subtitle": "Les petits plats - Site web de recettes de cuisine",
+    "technologies": "HTML, CSS, SASS, Bootstrap 4, Javascript",
+    "description": "Build a functional cooking recipe website with search algorithm.",
+    "links": {
+      "repository": "https://github.com/your-repo-link",
+      "maquette": "https://your-maquette-link"
+    }
+  },
+  {
+    "title": "Projet 10 - Définissez les besoins pour une app de soutien scolaire",
+    "subtitle": "Learn@Home - Soutien scolaire en ligne",
+    "technologies": "Figma or Sketch",
+    "description": "Define requirements and create UI/UX design for an online tutoring app.",
+    "links": {
+      "repository": "https://github.com/your-repo-link",
+      "maquette": "https://your-maquette-link"
+    }
+  },
+  {
+    "title": "Projet 11 - Développez une application Web avec React et React Router",
+    "subtitle": "Kasa - Location d'appartements entre particuliers",
+    "technologies": "HTML, CSS, SASS, Javascript, Jquery, NodeJS, React, Github, Heroku",
+    "description": "Full-stack application development using React, React Router, and NodeJS.",
+    "links": {
+      "repository": "https://github.com/GrimonprezAlexis/P11_kasa",
+      "maquette": "https://www.figma.com/file/bAnXDNqRKCRRP8mY2gcb5p/UI-Design-Kasa-FR?node-id=4%3A1"
+    }
+  },
+  {
+    "title": "Projet 12 - SportSee",
+    "subtitle": "Application Web pour le suivi sportif",
+    "technologies": "React, React Router, styled-components, axios, Recharts, Sass, prop-types",
+    "description": "Build a sports tracking web application using React and various libraries.",
+    "links": {
+      "repository": "https://github.com/GrimonprezAlexis/P12_SportSee",
+      "app_link": "https://p12-sportsee-eta.vercel.app/"
+    }
+  }
+]

@@ -41,7 +41,7 @@ export class ProjectsComponent implements OnInit, AfterViewInit {
   }
 
   private fetchProjects() {
-    this._projectsService.getAllProjects().subscribe({
+    this._projectsService.getProjects().subscribe({
       next: (data) => {
         this.projects = data;
         this.isLoading = false;
