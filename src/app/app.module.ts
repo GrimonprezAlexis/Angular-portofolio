@@ -20,6 +20,7 @@ import { ProjectsComponent } from './pages/projects/projects.component';
 import { ModalService } from './providers/modal/Modal.service';
 import { ModalProjectComponent } from './components/modalProject/modalProject.component';
 import { ModalCloseService } from './providers/modal/ModalClose.service';
+import { AlertComponent } from './components/alert/alert.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import { ModalCloseService } from './providers/modal/ModalClose.service';
     LoaderComponent,
     FilterCarouselComponent,
     ModalProjectComponent,
+    AlertComponent,
   ],
   imports: [
     BrowserModule,

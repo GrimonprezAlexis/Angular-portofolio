@@ -2,7 +2,7 @@ import { AfterViewInit, Component, OnInit, Output } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subject } from 'rxjs';
 import { ModalProjectComponent } from 'src/app/components/modalProject/modalProject.component';
-import { ProjectTypes, TechnologyWithIcons } from 'src/app/interface';
+import { Alert, ProjectTypes, TechnologyWithIcons } from 'src/app/interface';
 import { ModalService } from 'src/app/providers/modal/Modal.service';
 import { ModalCloseService } from 'src/app/providers/modal/ModalClose.service';
 import { DarkModeService } from 'src/app/services/darkmode/DarkMode.service';
@@ -16,12 +16,13 @@ import { ProjectsService } from 'src/app/services/projects/Projects.service';
 export class ProjectsComponent implements OnInit, AfterViewInit {
   projects: ProjectTypes[] = []; // Initialize as an empty array
   currentTechno: string = 'All';
-  hasError: boolean = false;
 
   selectedProject: ProjectTypes | undefined;
   private destroy$ = new Subject<void>();
-  private technoList: string[] = [];
   technologiesWithIcons: TechnologyWithIcons[] = [];
+
+  alert: Alert = { type: '', msg: '' };
+  hasError: boolean = false;
 
   @Output() isLoading: boolean = true;
 
@@ -56,6 +57,10 @@ export class ProjectsComponent implements OnInit, AfterViewInit {
         console.error('Error fetching portfolio data:', error);
         this.isLoading = false;
         this.hasError = true;
+        this.alert = {
+          type: 'error',
+          msg: 'Something went wrong while fetching projects.',
+        };
       },
     });
   }

@@ -1,0 +1,6 @@
+<div *ngIf="alert" [class.dark-mode]="darkModeService.isDarkMode">
+  <div class="error" [ngClass]="alert.type == 'error' ? 'error' : 'success'">
+    <i class="icon"></i>
+    <span class="message">{{alert.msg}}</span>
+  </div>
+</div>

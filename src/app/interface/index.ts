@@ -54,3 +54,8 @@ export interface TechnologyWithIcons {
   technologie: string;
   icon: string;
 }
+
+export interface Alert {
+  type: 'success' | 'error' | '';
+  msg: string;
+}
