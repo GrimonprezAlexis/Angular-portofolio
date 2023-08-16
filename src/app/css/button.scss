@@ -1,0 +1,57 @@
+%button {
+    padding: 8px 5px;
+    border: 1px solid #222;
+    border-radius: 3px;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 0.75em;
+    line-height: 1em;
+    box-shadow: 1px 1px 0 rgba(0, 0, 0, 0.25);
+    margin: 3px;
+    cursor: pointer;
+    z-index: 10;
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  .btn {
+    @extend %button;
+    &:hover {
+      color: #fff;
+      background: lighten(#313131, 10%);
+    }
+  }
+  
+  .btn-default, .btn-primary, .btn-secondary, .btn-info, .btn-light, .btn-dark {
+    @extend %button;
+    color: rgb(235, 241, 248);
+    border: none;
+    &:hover {
+      background: darken(rgb(235, 241, 248), 15%);
+    }
+  }
+  
+  .btn-default {
+    background: rgb(0, 150, 136);
+  }
+  
+  .btn-primary {
+    background: rgb(64, 114, 161);
+  }
+  
+  .btn-secondary {
+    background: rgb(125, 53, 89);
+  }
+    
+  .btn-info {
+    background: rgb(0, 173, 239);
+  }
+  
+  .btn-light {
+    background: rgb(240, 240, 240);
+    color: rgb(68, 68, 68);
+  }
+  
+  .btn-dark {
+    background: rgb(33, 37, 41);
+  }
+  

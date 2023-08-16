@@ -13,7 +13,6 @@ $black2 : #44484c;
   font-family: MontSerrat,Tahoma,Arial,sans-serif;
 }
 
-
 %container {
     margin-inline: auto;
     margin-block: 0 60px;
@@ -21,9 +20,6 @@ $black2 : #44484c;
     max-width: 1200px;
     font-size: $base-font-size;
     margin-top: 100px;
-}
-
-%fullcontainer {
 }
 
 %basePage {
@@ -49,25 +45,7 @@ a {
     color: inherit;
 }
 
-%button {
-  padding: 8px 5px;
-  // background: #313131;
-  // color: #999;
-  border-width: 1px 2px;
-  border-style: solid;
-  border-color: #222;
-  border-radius: 3px;
-  text-transform: uppercase;
-  font-family: MontSerrat,Tahoma,Arial,sans-serif;
-  font-weight: 700;
-  font-size: .75em;
-  line-height: 1em;
-  box-shadow: 1px 1px 0 rgba(0,0,0,.25);
-  margin: 3px;
-  cursor: pointer;
-  z-index: 10;
-  transition: background-color 0.3s ease-in-out;
-}
+
 
 %title {
   color: $black2;
@@ -76,111 +54,4 @@ a {
   font-size: 30px;
   line-height: 44px;
   letter-spacing: .0025em;
-}
-
-.btn {
-  @extend %button;
-  &:hover {
-    color: $white;
-    background: lighten(#313131, 10%);
-  }
-}
-
-/* Default Button */
-.btn-default {
-  @extend %button;
-  &:hover {
-    background: darken(rgb(235, 241, 248), 15%)
-  }
-  background: rgb(0, 150, 136);
-  color: rgb(235, 241, 248);
-  border: none;
-}
-
-/* Primary Button */
-.btn-primary {
-  @extend %button;
-  &:hover {
-    background: darken(rgb(64, 114, 161), 15%)
-  }
-  background: rgb(64, 114, 161);
-  color: rgb(235, 241, 248);
-  border: none;
-}
-
-/* Secondary Button */
-.btn-secondary {
-  @extend %button;
-  &:hover {
-    background: darken(rgb(125, 53, 89), 15%)
-  }
-  background: rgb(125, 53, 89);
-  color: rgb(235, 241, 248);
-  border: none;
-}
-
-/* Success Button */
-.btn-success {
-  @extend %button;
-    &:hover {
-      background: darken(rgb(0, 123, 98), 10%)
-    }
-  background: rgb(0, 123, 98);
-  color: rgb(235, 241, 248);
-  border: none;
-}
-
-/* Danger Button */
-.btn-danger {
-  @extend %button;
-  &:hover {
-    background: darken(rgb(191, 48, 48), 15%)
-  }
-  background: rgb(191, 48, 48);
-  color: rgb(235, 241, 248);
-  border: none;
-}
-
-/* Warning Button */
-.btn-warning {
-  @extend %button;
-  &:hover {
-    background: darken(rgb(245, 124, 0), 15%)
-  }
-  background: rgb(245, 124, 0);
-  color: rgb(235, 241, 248);
-  border: none;
-}
-
-/* Info Button */
-.btn-info {
-  @extend %button;
-  &:hover {
-    background: darken(rgb(0, 173, 239), 15%)
-  }
-  background: rgb(0, 173, 239);
-  color: rgb(235, 241, 248);
-  border: none;
-}
-
-/* Light Button */
-.btn-light {
-  @extend %button;
-  &:hover {
-    background: darken(rgb(240, 240, 240), 15%)
-  }
-  background: rgb(240, 240, 240);
-  color: rgb(68, 68, 68);
-  border: none;
-}
-
-/* Dark Button */
-.btn-dark {
-  @extend %button;
-  &:hover {
-    background: lighten(rgb(33, 37, 41), 15%)
-  }
-  background: rgb(33, 37, 41);
-  color: rgb(235, 241, 248);
-  border: none;
 }

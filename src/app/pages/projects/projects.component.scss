@@ -1,8 +1,9 @@
 @import '../../css/legacy.scss';
+@import '../../css/button.scss';
 
 #projects {
   @extend %basePage;
-  background-color: white;
+  background: #ffff;
 }
 
 .container {
@@ -24,51 +25,51 @@
   display: block;
   position: relative;
   height: 24px;
-  background-color: #ddd;
+  background: #ddd;
   width: 100%;
   color: $black2;
+}
 
-  h2 {
-    content: attr(data-text);
-    text-align: center;
-    font-size: 12px;
-    text-transform: uppercase;
-    font-weight: 700;
-    line-height: 26px;
-    color: $black2;
-  }
+.bar h2 {
+  content: attr(data-text);
+  text-align: center;
+  font-size: 12px;
+  text-transform: uppercase;
+  font-weight: 700;
+  line-height: 26px;
+  color: $black2;
+}
 
-  i {
-    height: 12px;
-    width: 12px;
-    display: inline-block;
-    background-color: #ff5f57;
-    border-radius: 50%;
-    position: absolute;
-    top: 6px;
-    left: 10px;
+.bar i {
+  height: 12px;
+  width: 12px;
+  display: inline-block;
+  background: #ff5f57;
+  border-radius: 50%;
+  position: absolute;
+  top: 6px;
+  left: 10px;
+}
 
-    &:before,
-    &:after {
-      content: " ";
-      height: 12px;
-      width: 12px;
-      display: inline-block;
-      border-radius: 50%;
-      position: absolute;
-      top: 0;
-    }
+.bar i:before,
+.bar i:after {
+  content: " ";
+  height: 12px;
+  width: 12px;
+  display: inline-block;
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+}
 
-    &:before {
-      left: 16px;
-      background-color: #ffbd2e;
-    }
+.bar i:before {
+  left: 16px;
+  background: #ffbd2e;
+}
 
-    &:after {
-      left: 32px;
-      background-color: #28ca41;
-    }
-  }
+.bar i:after {
+  left: 32px;
+  background: #28ca41;
 }
 
 .itemLength {
@@ -83,9 +84,9 @@
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
   animation: fade-item-menu 1s linear;
-  -moz-animation: fade-item-menu .6s; // Firefox
-  -webkit-animation: fade-item-menu .6s; // Safari et Chrome
-  -o-animation: fade-item-menu .6s; // Opera
+  -moz-animation: fade-item-menu 0.6s; /* Firefox */
+  -webkit-animation: fade-item-menu 0.6s; /* Safari and Chrome */
+  -o-animation: fade-item-menu 0.6s; /* Opera */
   animation-fill-mode: both;
 }
 
@@ -106,8 +107,6 @@
   }
 }
 
-
-
 .overlay {
   position: absolute;
   top: 0;
@@ -123,14 +122,6 @@
   flex-direction: row;
   align-items: center;
   align-content: center;
-
-  .icon {
-    i {
-      font-size: 3.5rem;
-      margin: 0 0.25em;
-      color: $white;
-    }
-  }
 }
 
 footer {
@@ -144,10 +135,6 @@ footer {
 
 .footer-sub {
   margin-bottom: -10px;
-}
-
-.project-type {
-  opacity: 65%;
 }
 
 .project-title {
@@ -167,31 +154,5 @@ footer {
   justify-content: space-between;
 }
 
-#projects>div>div>div:nth-child(8)>a>footer {
-  background: #ff0100;
-}
-#projects>div>div>div:nth-child(7)>a>footer {
-  background: #ff6060;
-}
-#projects>div>div>div:nth-child(6)>a>footer {
-  background: #34a393;
-}
-#projects>div>div>div:nth-child(5)>a>footer {
-  background: #b9b95b;
-}
-#projects>div>div>div:nth-child(4)>a>footer {
-  background: #90725d;
-}
-#projects>div>div>div:nth-child(3)>a>footer {
-  background: #adbbbd;
-}
-#projects>div>div>div:nth-child(2)>a>footer {
-  background: #e0a876;
-}
-#projects>div>div>div:first-child>a>footer {
-  background: #aa4c20;
-}
-
 @import './responsive.scss';
 @import './animations.scss';
-
