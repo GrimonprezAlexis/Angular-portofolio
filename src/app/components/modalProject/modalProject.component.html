@@ -18,6 +18,7 @@
             </span>
           </div>
           <div class="links">
+            <button class="btn btn-default" *ngIf="data.links.app_link !== '#'"><a href="{{ data.links.app_link }}" target="_blank">Voir le projet</a></button>
             <button class="btn btn-dark"><a href="{{ data.links.repository }}" target="_blank">Repository</a></button>
             <button class="btn btn-light"><a href="{{ data.links.maquette }}" target="_blank">Maquette</a></button>
           </div>

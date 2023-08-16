@@ -2,7 +2,11 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { catchError, map, tap } from 'rxjs/operators';
 import { Observable, of, throwError } from 'rxjs';
-import { ApiResponse, ProjectTypes } from '../../interface'; // Update the interface name
+import {
+  ApiResponse,
+  ProjectTypes,
+  TechnologyWithIcons,
+} from '../../interface'; // Update the interface name
 
 @Injectable({
   providedIn: 'root',
@@ -70,5 +74,75 @@ export class ProjectsService {
 
   deleteProject(id: string): Observable<any> {
     return this._http.delete<any>(`${this.apiBaseUrl}/projects/${id}`);
+  }
+
+  getTechnologiesList(projects: ProjectTypes[]): string[] {
+    const allowedTechnologies: string[] = [
+      'Angular',
+      'AngularJS',
+      'API',
+      'AdobeXD',
+      'CSS',
+      'Figma',
+      'Github',
+      'Javascript',
+      'Microservice',
+      'MongoDB',
+      'NodeJS',
+      'Prestashop',
+      'React',
+      'Redux',
+      'Recharts',
+      'RxJS',
+      'SASS',
+      'Typescript',
+    ];
+
+    const technologiesList: string[] = [];
+    projects.forEach((project: ProjectTypes) => {
+      project.technologies.forEach((tech: string) => {
+        if (allowedTechnologies.includes(tech)) {
+          technologiesList.push(tech);
+        }
+      });
+    });
+
+    return Array.from(new Set(technologiesList)); // Remove duplicates
+  }
+
+  getTechnologiesWithIcons(technologiesList: string[]): TechnologyWithIcons[] {
+    const technologyIcons: Record<string, string> = {
+      HTML: 'fa-brands fa-html5',
+      CSS: 'fa-brands fa-css3-alt',
+      Github: 'fa-brands fa-github',
+      SASS: 'fa-brands fa-sass',
+      Javascript: 'fa-brands fa-js',
+      NodeJS: 'fa-brands fa-node-js',
+      React: 'fa-brands fa-react',
+      Figma: 'fa-brands fa-figma',
+      Recharts: 'fa-brands fa-chart-line',
+      Redux: 'fa-brands fa-redux',
+      MongoDB: 'fa-brands fa-mdb',
+      API: 'fa-brands fa-api',
+      AdobeXD: 'fa-brands fa-adobe',
+      Prestashop: 'fa-brands fa-prestashop',
+      Excel: 'fa-brands fa-excel',
+      Filezilla: 'fa-brands fa-file-archive',
+      Angular: 'fa-brands fa-angular',
+      Nodejs: 'fa-brands fa-node-js',
+      RxJS: 'fa-brands fa-rxjs',
+      Typescript: 'fa-brands fa-typescript',
+      AngularJS: 'fa-brands fa-angular',
+      Microservice: 'fa-solid fa-cogs',
+    };
+
+    return technologiesList.map((tech) => {
+      const icon = technologyIcons[tech];
+
+      return {
+        technologie: tech,
+        icon: icon,
+      };
+    });
   }
 }

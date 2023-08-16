@@ -13,13 +13,8 @@ export interface ProjectTypes {
   links: {
     repository: string;
     maquette: string;
+    app_link: string;
   };
-}
-
-export interface CategoryFilters {
-  label: string;
-  icon: string;
-  category: string;
 }
 
 interface ModalComponent {
@@ -38,7 +33,7 @@ export interface ApiResponse {
   data: ProjectTypes;
 }
 
-//SOON
+//SOON ..
 export interface ProjectsDetails {
   id: number;
   title: string;
@@ -53,4 +48,9 @@ export interface ProjectsDetails {
   technologies: string[];
   hosting?: string;
   maquetteImage?: File;
+}
+
+export interface TechnologyWithIcons {
+  technologie: string;
+  icon: string;
 }

@@ -9,13 +9,13 @@
     <div class="carousel-container">
         <ul class="search__filter__list" #categoryList>
             <li 
-                *ngFor="let cat of categories; let i = index" 
-                (click)="setCurrentCategory(cat.label)" 
-                [ngClass]="{ 'isActive': cat.label === currentCategory }"
+                *ngFor="let t of technologiesWithIcons; let i = index" 
+                (click)="setCurrentTechno(t.technologie)" 
+                [ngClass]="{ 'isActive': t.technologie === currentTechno }"
             >
-              <span class="search__filter__title">{{ cat.label }}</span>
+              <span class="search__filter__title">{{ t.technologie }}</span>
               <span class="search__filter__icon">
-                <i class="{{ cat.icon }}"></i>
+                <i class="{{ t.icon }}"></i>
               </span>
             </li>
           </ul>

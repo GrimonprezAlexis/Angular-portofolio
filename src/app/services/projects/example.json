@@ -7,10 +7,10 @@
     "icons": ["fa-brands fa-html5", "fa-brands fa-css3-alt", "fa-brands fa-font-awesome-flag", "fa-brands fa-github"],
     "imageUrl": "https://github.com/GrimonprezAlexis/portfolio-img/blob/main/Reservia.png?raw=true",
     "imagesUrl": [],
-    "imageName": "Reservia.png",
     "description": "Site web responsive basé sur un design fourni.",
     "tags": ["Projet 2"],
     "links": {
+      "app_link": "https://reservia.vercel.app/",
       "repository": "https://github.com/GrimonprezAlexis/GrimonprezAlexis_2_06022021",
       "maquette": "https://camo.githubusercontent.com/390a8ba597c793572851c06f17f78df3787b60d42023bd994c67e89ee20edd3b/68747470733a2f2f757365722e6f632d7374617469632e636f6d2f75706c6f61642f323032302f30382f32342f313539383236323835373830345f4d6171756574746525323072657365727669612d6d696e2e706e67"
     }
@@ -23,12 +23,12 @@
     "icons": ["fa-brands fa-html5", "fa-brands fa-css3-alt", "fa-brands fa-sass", "fa-brands fa-font-awesome-flag", "fa-brands fa-github"],
     "imageUrl": "https://github.com/GrimonprezAlexis/portfolio-img/blob/main/Ohmyfood.png?raw=true",
     "imagesUrl": [],
-    "imageName": "Ohmyfood.png",
     "description": "Créer un site web responsive avec des animations.",
     "tags": ["Projet 3"],
     "links": {
-      "repository": "https://github.com/your-repo-link",
-      "maquette": "https://your-maquette-link"
+      "app_link": "https://ohmyfood.vercel.app/",
+      "repository": "https://github.com/GrimonprezAlexis/P3_Ohmyfood",
+      "maquette": "https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/DW_P3/Maquettes%20Ohmyfood.zip"
     }
   },
   {
@@ -39,28 +39,60 @@
     "icons": ["fa-brands fa-html5", "fa-brands fa-css3-alt", "fa-brands fa-js", "fa-brands fa-github"],
     "imageUrl": "https://github.com/GrimonprezAlexis/portfolio-img/blob/main/GameonWebsite.png?raw=true",
     "imagesUrl": [],
-    "imageName": "GameonWebsite.png",
     "description": "Mettre en place des fonctionnalités JavaScript pour une page d'atterrissage.",
     "tags": ["Projet 4"],
     "links": {
+      "app_link": "https://p4-game-on-website.vercel.app/",
       "repository": "https://github.com/your-repo-link",
-      "maquette": "https://your-maquette-link"
+      "maquette": "https://www.figma.com/file/prxFGnSUoEhk6PTcMaJQim/UI-Design-GameOn-EN"
+    }
+  },
+  {
+    "title": "Kasa",
+    "subtitle": "Location d'appartements entre particuliers",
+    "job": "Développez une application Web avec React et React Router",
+    "technologies": ["HTML", "CSS", "SASS", "Javascript", "Jquery", "NodeJS", "React", "Github", "Vercel"],
+    "icons": ["fa-brands fa-html5", "fa-brands fa-css3-alt", "fa-brands fa-sass", "fa-brands fa-js", "fa-brands fa-jquery", "fa-brands fa-node-js", "fa-brands fa-react", "fa-brands fa-github", "fa-brands fa-vercel"],
+    "imageUrl": "https://github.com/GrimonprezAlexis/portfolio-img/blob/main/Kasa.png?raw=true",
+    "imagesUrl": [],
+    "description": "Développer l'ensemble de l'application du Front end au Back-end / data en React / JavaScript / NodeJS.",
+    "tags": ["Projet 11"],
+    "links": {
+      "app_link": "https://p11-kasa-agr.vercel.app/",
+      "repository": "https://github.com/GrimonprezAlexis/P11_kasa",
+      "maquette": "https://www.figma.com/file/bAnXDNqRKCRRP8mY2gcb5p/UI-Design-Kasa-FR?node-id=4%3A1"
+    }
+  },  
+  {
+    "title": "Learn@Home",
+    "subtitle": "Soutien scolaire en ligne",
+    "job": "Définissez les besoins pour une app de soutien scolaire",
+    "technologies": ["Figma", "Sketch", "Github"],
+    "icons": ["fa-brands fa-figma", "fa-brands fa-sketch"],
+    "imageUrl": "https://github.com/GrimonprezAlexis/portfolio-img/blob/main/learnAtHome/learnAtHome-5-maquettes-1.png?raw=true",
+    "imagesUrl": [],
+    "description": "Concevoir un site web pour les élèves et les bénévoles afin qu'ils puissent communiquer facilement sur le site, peu importe où ils se trouvent.",
+    "tags": ["Projet 10"],
+    "links": {
+      "app_link": "https://github.com/GrimonprezAlexis/portfolio-img/blob/main/learnAtHome/learnAtHome-5-maquettes-1.png?raw=true",
+      "repository": "https://github.com/GrimonprezAlexis/P10_Dev4U",
+      "maquette": "#"
     }
   },
   {
     "title": "Les petits plats",
     "subtitle": "Site web de recettes de cuisine",
     "job": "Construire un site web fonctionnel de recettes de cuisine avec un algorithme de recherche en JavaScript",
-    "technologies": ["HTML", "CSS (Sass, Bootstrap 4)", "Javascript"],
+    "technologies": ["HTML", "CSS", "Sass", "Bootstrap 4", "Javascript", "Github"],
     "icons": ["fa-brands fa-html5", "fa-brands fa-css3-alt", "fa-brands fa-sass", "fa-brands fa-bootstrap", "fa-brands fa-js"],
     "imageUrl": "https://github.com/GrimonprezAlexis/portfolio-img/blob/main/LesPetitsPlats.png?raw=true",
     "imagesUrl": [],
-    "imageName": "LesPetitsPlats.png",
     "description": "Construire un site web fonctionnel de recettes de cuisine en respectant le design des maquettes et développer un algorithme de recherche en JavaScript. L'algorithme de recherche doit être performant et rapide, avec deux versions différentes à comparer.",
     "tags": ["Projet 7"],
     "links": {
-      "repository": "https://github.com/your-repo-link",
-      "maquette": "https://your-maquette-link"
+      "app_link": "https://p7-les-petits-plat.vercel.app/",
+      "repository": "https://github.com/GrimonprezAlexis/P7_Les-petits-plat",
+      "maquette": "https://www.figma.com/file/xqeE1ZKlHUWi2Efo8r73NK"
     },
     "constraints": {
       "technical": [
@@ -88,32 +120,31 @@
     "title": "SportSee",
     "subtitle": "Application Web pour le suivi sportif",
     "job": "Réalisation du kanban selon les User Stories",
-    "technologies": ["React", "React Router", "styled-components", "axios", "Recharts", "Sass", "prop-types"],
+    "technologies": ["React", "React Router", "Styled-components", "axios", "Recharts", "Sass", "Prop-types"],
     "icons": ["fa-brands fa-react", "fa-brands fa-react", "fa-brands fa-styled-components", "fa-brands fa-axios", "fa-brands fa-chart-line", "fa-brands fa-sass", "fa-solid fa-shapes"],
     "imageUrl": "https://github.com/GrimonprezAlexis/portfolio-img/blob/main/Sportsee.png?raw=true",
     "imagesUrl": [],
-    "imageName": "Sportsee.png",
     "description": "Construire une application de suivi sportif en utilisant React et diverses bibliothèques.",
     "tags": ["Projet 12"],
     "links": {
+      "app_link": "https://p12-sportsee-eta.vercel.app/",
       "repository": "https://github.com/GrimonprezAlexis/P12_SportSee",
-      "app_link": "https://p12-sportsee-eta.vercel.app/"
+      "maquette": "https://www.figma.com/file/BMomGVZqLZb811mDMShpLu/UI-design-Sportify-FR?node-id=0%3A1"
     }
   },
   {
     "title": "ArgentBank",
     "subtitle": "Mise en place d'une application web React pour Argent Bank",
     "job": "Utiliser une API pour gérer les comptes utilisateur bancaire avec React",
-    "technologies": ["React", "Redux", "NodeJS", "MongoDB", "HTML", "CSS", "Validation W3C"],
+    "technologies": ["React", "Redux", "NodeJS", "MongoDB", "HTML", "CSS", "Validation W3C", "API", "Github"],
     "icons": ["fa-brands fa-react", "fa-brands fa-redux", "fa-brands fa-node-js", "fa-brands fa-mongodb", "fa-brands fa-html5", "fa-brands fa-css3-alt", "fa-solid fa-check"],
     "imageUrl": "https://github.com/GrimonprezAlexis/portfolio-img/blob/main/ArgentBank.png?raw=true",
     "imagesUrl": [],
-    "imageName": "ArgentBank.png",
     "description": "Développer une application web de gestion de comptes bancaires utilisant React et Redux.",
     "tags": ["Projet 13"],
     "links": {
       "repository": "https://github.com/GrimonprezAlexis/P13-Argent-Bank-API",
-      "app_link": "http://localhost:3001/api-docs/#/",
+      "app_link": "#",
       "swagger_yaml": "https://editor.swagger.io/",
       "credentials": [
         { "email": "tony@stark.com", "password": "password123" },
@@ -125,16 +156,15 @@
     "title": "HRnet",
     "subtitle": "Conversion d'une application jQuery HRnet en React",
     "job": "Convertir des plugins jQuery en composants React",
-    "technologies": ["React", "jQuery", "Jest", "ES6", "Validation W3C"],
+    "technologies": ["React", "jQuery", "Jest", "ES6", "Validation W3C", "Custom Component", "Github"],
     "icons": ["fa-brands fa-react", "fa-brands fa-jquery", "fa-solid fa-check-circle", "fa-brands fa-js-square", "fa-solid fa-shapes"],
     "imageUrl": "https://github.com/GrimonprezAlexis/portfolio-img/blob/main/Hrnet.png?raw=true",
     "imagesUrl": [],
-    "imageName": "Hrnet.png",
     "description": "Convertir une application lente jQuery HRnet en une application React performante.",
     "tags": ["Projet 14"],
     "links": {
       "repository": "https://github.com/GrimonprezAlexis/P14_HRnet",
-      "app_link": "http://localhost:3000",
+      "app_link": "https://p14-h-rnet-gules.vercel.app/",
       "conversion_details": [
         "Sélecteur de date - DatePicker",
         "Fenêtre modale - jQuery.modal.js",
@@ -151,10 +181,10 @@
     "icons": ["fa-brands fa-adobe", "fa-solid fa-shapes"],
     "imageUrl": "",
     "imagesUrl": [],
-    "imageName": "",
     "description": "Construire un menu de restauration rapide.",
     "tags": ["Projet 15"],
     "links": {
+      "app_link": "",
       "repository": "https://github.com/your-repo-link",
       "maquette": "https://your-maquette-link"
     }
@@ -163,16 +193,16 @@
     "title": "Wabaki Sushi E-commerce",
     "subtitle": "Mise en place d'un CMS Prestashop",
     "job": "Créez un site accessible pour un restaurant japonais",
-    "technologies": ["Prestashop", "Excel"],
+    "technologies": ["Prestashop", "Excel", "Filezilla", "1&1"],
     "icons": ["fa-solid fa-file-alt", "fa-solid fa-spreadsheet"],
     "imageUrl": "https://github.com/GrimonprezAlexis/portfolio-img/blob/main/Wabakisushi.png?raw=true",
     "imagesUrl": [],
-    "imageName": "Wabaki-menu.png",
     "description": "Construire un site web pour un restaurant japonais.",
     "tags": ["Projet 16"],
     "links": {
-      "repository": "https://github.com/your-repo-link",
-      "maquette": "https://your-maquette-link"
+      "app_link": "https://wabaki-sushi.com/",
+      "repository": "#",
+      "maquette": "#"
     }
   },
   {
@@ -183,44 +213,44 @@
     "icons": ["fa-brands fa-adobe", "fa-brands fa-font-awesome-flag"],
     "imageUrl": "https://github.com/GrimonprezAlexis/portfolio-img/blob/main/Wabaki-menu.png?raw=true",
     "imagesUrl": [],
-    "imageName": "",
     "description": "Créer des flyers de menu et une carte de fidélité pour un restaurant de sushi.",
     "tags": ["Projet 17"],
     "links": {
-      "repository": "https://github.com/your-repo-link",
-      "maquette": "https://your-maquette-link"
+      "app_link": "https://wabaki-sushi.com/themes/sushi_box/assets/img/menu/menu.pdf",
+      "repository": "#",
+      "maquette": "#"
     }
   },
   {
     "title": "Portfolio",
     "subtitle": "Application web en Angular + API NodeJS backend",
     "job": "Présentation digitale de mon profil",
-    "technologies": ["Angular", "Nodejs", "API", "RxJS", "Typescript"],
+    "technologies": ["Angular", "Nodejs", "API", "RxJS", "Typescript", "Github"],
     "icons": ["fa-brands fa-angular", "fa-brands fa-node-js", "fa-brands fa-api", "fa-brands fa-react", "fa-brands fa-js"],
     "imageUrl": "https://github.com/GrimonprezAlexis/portfolio-img/blob/main/PortfolioApp.png?raw=true",
     "imagesUrl": [],
-    "imageName": "PortfolioApp.png",
     "description": "Construire un portfolio pour présenter mon profil.",
     "tags": ["Projet 18"],
     "links": {
-      "repository": "https://github.com/your-repo-link",
-      "maquette": "https://your-maquette-link"
+      "app_link": "https://alexgrz.vercel.app/",
+      "repository": "hhttps://github.com/GrimonprezAlexis/Angular-portofolio",
+      "maquette": "#"
     }
   },
   {
     "title": "PrestoPark",
     "subtitle": "Destinée aux usagers du stationnement payant",
     "job": "Développement de la plateforme pour le stationnement",
-    "technologies": ["AngularJS", "NodeJS", "Javascript"],
+    "technologies": ["AngularJS", "NodeJS", "Javascript", "API", "Microservice", "3DSecure", "Github"],
     "icons": ["fa-brands fa-angular", "fa-brands fa-node-js", "fa-brands fa-js"],
     "imageUrl": "https://github.com/GrimonprezAlexis/portfolio-img/blob/main/PrestoPark.png?raw=true",
     "imagesUrl": [],
-    "imageName": "PrestoPark.png",
     "description": "Construire une plateforme pour le stationnement payant.",
     "tags": ["Projet 19"],
     "links": {
-      "repository": "https://github.com/your-repo-link",
-      "maquette": "https://your-maquette-link"
+      "app_link": "https://prestopark.com",
+      "repository": "#",
+      "maquette": "#"
     }
   },
 
@@ -228,16 +258,16 @@
     "title": "Paking Val D'Isère",
     "subtitle": "Destinée aux usagers du stationnement payant",
     "job": "Développement de la plateforme pour le stationnement",
-    "technologies": ["AngularJS", "NodeJS", "Javascript"],
+    "technologies": ["AngularJS", "NodeJS", "Javascript", "API", "Microservice", "3DSecure", "Github"],
     "icons": ["fa-brands fa-angular", "fa-brands fa-node-js", "fa-brands fa-js"],
     "imageUrl": "https://github.com/GrimonprezAlexis/portfolio-img/blob/main/Val-d-isere.png?raw=true",
     "imagesUrl": [],
-    "imageName": "Valdisere.png",
     "description": "Construire une plateforme pour le stationnement payant.",
     "tags": ["Projet 19"],
     "links": {
-      "repository": "https://github.com/your-repo-link",
-      "maquette": "https://your-maquette-link"
+      "app_link": "https://www.parkingvaldisere.com/",
+      "repository": "#",
+      "maquette": "#"
     }
   },
   {
@@ -246,14 +276,14 @@
     "job": "Maquettage de la nouvelle interface",
     "technologies": ["AdobeXD"],
     "icons": ["fa-brands fa-adobe"],
-    "imageUrl": "",
+    "imageUrl": "https://github.com/GrimonprezAlexis/portfolio-img/blob/main/PrestoPark-v2.png?raw=true",
     "imagesUrl": [],
-    "imageName": "",
     "description": "Construire une nouvelle interface pour PrestoPark V2.",
     "tags": ["Projet 20"],
     "links": {
-      "repository": "https://github.com/your-repo-link",
-      "maquette": "https://your-maquette-link"
+      "app_link": "",
+      "repository": "#",
+      "maquette": "#"
     }
   },
   {
@@ -264,10 +294,10 @@
     "icons": ["fa-brands fa-react"],
     "imageUrl": "",
     "imagesUrl": [],
-    "imageName": "",
     "description": "Construire une nouvelle caisse enregistreuse pour les commandes clients.",
     "tags": ["Projet 21"],
     "links": {
+      "app_link": "",
       "repository": "https://github.com/your-repo-link",
       "maquette": "https://your-maquette-link"
     }

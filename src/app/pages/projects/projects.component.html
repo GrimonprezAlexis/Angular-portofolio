@@ -2,19 +2,20 @@
 
 <app-modalProject *ngIf="selectedProject" [data]="selectedProject"/>
 
-<section class="suggestions" id="projects" [class.dark-mode]="darkModeService.isDarkMode">
+<section class="suggestions" id="projects" [class.dark-mode]="darkModeService.isDarkMode" *ngIf="projects && !isLoading">
     <div class="container">
         <h2 class="title" [class.dark-mode]="darkModeService.isDarkMode">Mes projets</h2>
 
         <app-filter-carousel 
-            [currentCategory]=currentCategory 
-            (newCurrentCategory)="updateCurrentCategory($event)"
+            [currentTechno]=currentTechno 
+            (newCurrentTechno)="updateCurrentTechno($event)"
+            [technologiesWithIcons]="technologiesWithIcons"
         />
         
         <div class="wrapper-grid">
             <div 
                 class="card fade-in-delay-{{ i }}" 
-                *ngFor="let project of getFilteredProjectList(); let i = index"
+                *ngFor="let project of getProjectsByTechnology(); let i = index"
             >
                 <div class="bar"><h2>{{ project.title }}</h2><i></i></div>
 
@@ -24,7 +25,7 @@
 
                         <div class="overlay">
                             <div class="project-action">
-                                <button type="button" class="btn btn-default" (click)="goToProjectUrl(project._id)">Voir le projet</button>
+                                <button type="button" class="btn btn-default" (click)="goToProjectUrl(project.links.app_link)" *ngIf="project.links.app_link !== '#'">Voir le projet</button>
                                 <button type="button" class="btn btn-primary" [routerLink]="['/projects', project._id]" >Plus de détail</button>
                             </div>
                         </div>
@@ -36,7 +37,7 @@
                         </div>
 
                         <div class="project-tags">
-                            <button class="btn" *ngFor="let techno of project.technologies">{{techno}}</button>
+                            <button class="btn" *ngFor="let techno of project.technologies" (click)="updateCurrentTechno(techno)">{{techno}}</button>
                         </div>
                     </footer>
                 </div>

@@ -2,7 +2,7 @@ import { AfterViewInit, Component, OnInit, Output } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subject } from 'rxjs';
 import { ModalProjectComponent } from 'src/app/components/modalProject/modalProject.component';
-import { ProjectTypes } from 'src/app/interface';
+import { ProjectTypes, TechnologyWithIcons } from 'src/app/interface';
 import { ModalService } from 'src/app/providers/modal/Modal.service';
 import { ModalCloseService } from 'src/app/providers/modal/ModalClose.service';
 import { DarkModeService } from 'src/app/services/darkmode/DarkMode.service';
@@ -15,9 +15,12 @@ import { ProjectsService } from 'src/app/services/projects/Projects.service';
 })
 export class ProjectsComponent implements OnInit, AfterViewInit {
   projects: ProjectTypes[] = []; // Initialize as an empty array
-  currentCategory: string = 'All';
+  currentTechno: string = 'All';
+
   selectedProject: ProjectTypes | undefined;
   private destroy$ = new Subject<void>();
+  private technoList: string[] = [];
+  technologiesWithIcons: TechnologyWithIcons[] = [];
 
   @Output() isLoading: boolean = true;
 
@@ -45,6 +48,7 @@ export class ProjectsComponent implements OnInit, AfterViewInit {
     this._projectsService.getAllProjects().subscribe({
       next: (data) => {
         this.projects = data;
+        this.updateTechnoWithIcons(this.projects);
         this.isLoading = false;
       },
       error: (error) => {
@@ -54,21 +58,34 @@ export class ProjectsComponent implements OnInit, AfterViewInit {
     });
   }
 
-  updateCurrentCategory(event: any) {
-    this.currentCategory = event;
+  private updateTechnoWithIcons(projects: ProjectTypes[]): void {
+    const technologiesList =
+      this._projectsService.getTechnologiesList(projects);
+    this.technologiesWithIcons =
+      this._projectsService.getTechnologiesWithIcons(technologiesList);
+    this.addDefaultTechnology();
   }
 
-  getFilteredProjectList() {
-    if (!this.currentCategory || this.currentCategory === 'All') {
+  private addDefaultTechnology(): void {
+    this.technologiesWithIcons.unshift({
+      icon: 'fa fa-star',
+      technologie: this.currentTechno,
+    });
+  }
+
+  updateCurrentTechno(event: any) {
+    this.currentTechno = event;
+  }
+
+  getProjectsByTechnology(): ProjectTypes[] {
+    if (!this.currentTechno || this.currentTechno === 'All') {
       return this.projects;
-    } else {
-      return this.projects.filter((item: { technologies: (string | null)[] }) =>
-        item.technologies.includes(this.currentCategory)
-      );
     }
+    return this.projects.filter((project: ProjectTypes) =>
+      project.technologies.includes(this.currentTechno)
+    );
   }
 
-  //Carefull
   openProjectModal(projectId: any) {
     this._modalService.openModal(ModalProjectComponent, {
       data: this.projects.find((project) => project._id === projectId),
@@ -81,8 +98,8 @@ export class ProjectsComponent implements OnInit, AfterViewInit {
     this.openProjectModal(selectedProject._id);
   }
 
-  goToProjectUrl(projectId: string) {
-    alert('Open Url');
+  goToProjectUrl(url: string) {
+    window.open(url, '_blank');
   }
 
   getImageFromAssets(project: ProjectTypes) {
