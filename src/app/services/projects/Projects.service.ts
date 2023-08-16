@@ -14,7 +14,8 @@ import {
 export class ProjectsService {
   constructor(private _http: HttpClient) {}
 
-  private apiBaseUrl = 'http://localhost:3000/v1';
+  private apiBaseUrl =
+    'https://nodejs-portfolio-alexgrz-alexgrzdev.vercel.app/v1';
 
   getAllProjects(): Observable<ProjectTypes[]> {
     return this._http
