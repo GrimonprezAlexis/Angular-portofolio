@@ -14,8 +14,7 @@ import {
 export class ProjectsService {
   constructor(private _http: HttpClient) {}
 
-  private apiBaseUrl =
-    'https://nodejs-portfolio-fwumt0zo2-alexgrzdev.vercel.app/v1';
+  private apiBaseUrl = 'nodejs-portfolio-alexgrzdev.vercel.app/v1';
 
   getAllProjects(): Observable<ProjectTypes[]> {
     return this._http
