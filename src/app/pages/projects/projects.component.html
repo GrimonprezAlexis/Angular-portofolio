@@ -6,6 +6,11 @@
     <div class="container">
         <h2 class="title" [class.dark-mode]="darkModeService.isDarkMode">Mes projets</h2>
 
+        <div class="error-message" *ngIf="hasError">
+            <i class="icon"></i>
+            <span class="message">Erreur lors de la récupération des projets .. </span>
+        </div>
+
         <app-filter-carousel 
             [currentTechno]=currentTechno 
             (newCurrentTechno)="updateCurrentTechno($event)"

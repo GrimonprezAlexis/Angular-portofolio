@@ -16,6 +16,7 @@ import { ProjectsService } from 'src/app/services/projects/Projects.service';
 export class ProjectsComponent implements OnInit, AfterViewInit {
   projects: ProjectTypes[] = []; // Initialize as an empty array
   currentTechno: string = 'All';
+  hasError: boolean = false;
 
   selectedProject: ProjectTypes | undefined;
   private destroy$ = new Subject<void>();
@@ -54,6 +55,7 @@ export class ProjectsComponent implements OnInit, AfterViewInit {
       error: (error) => {
         console.error('Error fetching portfolio data:', error);
         this.isLoading = false;
+        this.hasError = true;
       },
     });
   }
