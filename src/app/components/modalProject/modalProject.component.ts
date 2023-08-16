@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ProjectTypes } from 'src/app/interface';
 import { ModalService } from 'src/app/providers/modal/Modal.service';
@@ -10,7 +10,9 @@ import { ModalCloseService } from 'src/app/providers/modal/ModalClose.service';
   styleUrls: ['./modalProject.component.scss'],
 })
 export class ModalProjectComponent implements OnInit {
-  @Input() data: ProjectTypes | undefined;
+  @Input() data: ProjectTypes;
+  @Output() save: EventEmitter<ProjectTypes> = new EventEmitter<ProjectTypes>();
+  @Output() cancel: EventEmitter<void> = new EventEmitter<void>();
 
   constructor(
     private _route: ActivatedRoute,
@@ -36,5 +38,15 @@ export class ModalProjectComponent implements OnInit {
 
   closeModal() {
     this._modalService.closeModal();
+  }
+
+  saveChanges() {
+    // Emit the updated project to save changes
+    this.save.emit(this.data);
+  }
+
+  cancelEdit() {
+    // Emit cancel event to close the modal
+    this.cancel.emit();
   }
 }

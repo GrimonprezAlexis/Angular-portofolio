@@ -1,13 +1,19 @@
 export interface ProjectTypes {
-  id: string;
+  _id: string;
   title: string;
   subtitle: string;
   job: string;
   technologies: string[];
+  icons: string[];
+  imageUrl: string;
+  imagesUrl: string[];
+  imageName: string; //hard fix
   description: string;
   tags: string[];
-  icons: string[];
-  imagesUrl: string[];
+  links: {
+    repository: string;
+    maquette: string;
+  };
 }
 
 export interface CategoryFilters {
@@ -24,6 +30,12 @@ export interface Config {
   PORT: number;
   MONGO_URI: string;
   API_URL: string;
+}
+
+export interface ApiResponse {
+  success: boolean;
+  message: string;
+  data: ProjectTypes;
 }
 
 //SOON

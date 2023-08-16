@@ -1,12 +1,31 @@
 <div class="modal-overlay">
   <div class="modal">
-    <div class="modal-header">
-      <h2>Test</h2>
-      <h2>{{ data?.title }}</h2>
-      <button class="close-button" (click)="closeModal()">X</button>
-    </div>
     <div class="modal-content">
-      <!-- Insert your project details here -->
+      <div class="modal-header">
+        <h2 class="title">{{ data.title }}</h2>
+        <span class="close-button" (click)="closeModal()">&times;</span>
+      </div>
+
+      <div>
+        <p class="subtitle">{{ data.subtitle }}</p>
+        <img class="image" [src]="data.imageUrl" [alt]="data.title" *ngIf="data.imageUrl">
+        <p class="description">{{ data.description }}</p>
+
+        <div class="modal-footer">
+          <div class="technologies">
+            <span class="icon" *ngFor="let icon of data.icons">
+              <i [class]="icon"></i>
+            </span>
+          </div>
+          <div class="links">
+            <button class="btn btn-dark"><a href="{{ data.links.repository }}" target="_blank">Repository</a></button>
+            <button class="btn btn-light"><a href="{{ data.links.maquette }}" target="_blank">Maquette</a></button>
+          </div>
+        </div>
+      </div>
     </div>
+
   </div>
 </div>
+
+<!-- modal.component.html -->

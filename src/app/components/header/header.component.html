@@ -1,4 +1,4 @@
-  <header class="header" [class.dark-mode]="darkModeService.isDarkMode">
+  <header class="header" [class.dark-mode]="darkModeService.isDarkMode" [ngClass]="{ 'header-hidden': !isHeaderVisible }">
     <div class="container">
 
       <div class="container_logo">

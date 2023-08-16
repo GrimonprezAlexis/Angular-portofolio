@@ -1,8 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { catchError } from 'rxjs/operators';
-import { Observable, of } from 'rxjs';
-import { ProjectTypes } from '../../interface'; // Update the interface name
+import { catchError, map, tap } from 'rxjs/operators';
+import { Observable, of, throwError } from 'rxjs';
+import { ApiResponse, ProjectTypes } from '../../interface'; // Update the interface name
 
 @Injectable({
   providedIn: 'root',
@@ -10,14 +10,48 @@ import { ProjectTypes } from '../../interface'; // Update the interface name
 export class ProjectsService {
   constructor(private _http: HttpClient) {}
 
-  private apiBaseUrl = 'http://localhost:3000/api';
+  private apiBaseUrl = 'http://localhost:3000/v1';
 
-  getProjects(): Observable<ProjectTypes[]> {
-    return this._http.get<ProjectTypes[]>(`${this.apiBaseUrl}/projects`);
+  getAllProjects(): Observable<ProjectTypes[]> {
+    return this._http
+      .get<{ data: ProjectTypes[] }>(`${this.apiBaseUrl}/projects`)
+      .pipe(
+        map((response) => response.data),
+        catchError((error) => {
+          console.error('Error fetching projects:', error);
+          return throwError(
+            () => new Error('Something went wrong while fetching projects.')
+          );
+        })
+      );
   }
 
+  /**
+   * 
+   * @param id 
+   * @returns 
+    data:  {
+      _id: '64da845b16da2fded75d22ca', 
+      title: 'Réservia', 
+      subtitle: 'Outil de planification de vacances',
+      job: 'Transformer une maquette en site web',
+      …
+    }
+    message: "Success"
+    success: true
+   */
   getProjectById(id: string): Observable<ProjectTypes> {
-    return this._http.get<ProjectTypes>(`${this.apiBaseUrl}/projects/${id}`);
+    return this._http
+      .get<ApiResponse>(`${this.apiBaseUrl}/projects/${id}`)
+      .pipe(
+        map((response) => response.data),
+        catchError((error) => {
+          console.error('Error fetching project by ID:', error);
+          return throwError(
+            () => new Error('Something went wrong while fetching the project.')
+          );
+        })
+      );
   }
 
   createProject(project: ProjectTypes): Observable<ProjectTypes> {

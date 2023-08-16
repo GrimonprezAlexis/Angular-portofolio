@@ -25,4 +25,17 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
 # Angular-portofolio
+
+``
+<button type="button" class="btn-default">A propos</button>
+<button type="button" class="btn-primary">A propos</button>
+<button type="button" class="btn-secondary">A propos</button>
+<button type="button" class="btn-success">A propos</button>
+<button type="button" class="btn-danger">A propos</button>
+<button type="button" class="btn-warning">A propos</button>
+<button type="button" class="btn-info">A propos</button>
+<button type="button" class="btn-light">A propos</button>
+<button type="button" class="btn-dark">A propos</button>
+``
