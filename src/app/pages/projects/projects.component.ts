@@ -117,6 +117,26 @@ export class ProjectsComponent implements OnInit, AfterViewInit {
     //return require(`../../../${imagePath}`);
   }
 
+  getProjectFromLocal() {
+    this.isLoading = true;
+    this._projectsService.getLocalProjects().subscribe({
+      next: (data) => {
+        this.projects = data;
+        localStorage.setItem('projects', JSON.stringify(data));
+        this.isLoading = false;
+      },
+      error: (error) => {
+        console.error('Error fetching portfolio data:', error);
+        this.isLoading = false;
+        this.hasError = true;
+        this.alert = {
+          type: 'error',
+          msg: 'Error - fetching portfolio data...',
+        };
+      },
+    });
+  }
+
   ngOnDestroy() {
     this.destroy$.next();
     this.destroy$.complete();

@@ -22,6 +22,11 @@ $black2 : #44484c;
     margin-top: 100px;
 }
 
+.container {
+  @extend %container;
+  max-width: inherit;
+}
+
 %basePage {
   @extend %fontfamilyPrimary;
   padding: 20px;

@@ -1,6 +1,5 @@
 <div *ngIf="alert" [class.dark-mode]="darkModeService.isDarkMode">
   <div class="error" [ngClass]="alert.type == 'error' ? 'error' : 'success'">
-    <i class="icon"></i>
-    <span class="message">{{alert.msg}}</span>
+    <span class="message"><i class="icon" [ngClass]="alert.type == 'error' ? 'fa fa-exclamation-triangle' : 'fa fa-check'"></i> {{alert.msg}}</span>
   </div>
 </div>

@@ -145,4 +145,13 @@ export class ProjectsService {
       };
     });
   }
+
+  getLocalProjects(): Observable<ProjectTypes[]> {
+    return this._http.get<ProjectTypes[]>('../../../assets/db_local.json').pipe(
+      catchError((error) => {
+        console.error('Error fetching portfolio data:', error);
+        return of([]); // Return an empty array in case of error
+      })
+    );
+  }
 }

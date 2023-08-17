@@ -1,14 +1,9 @@
-@import '../../css/legacy.scss';
 @import '../../css/button.scss';
+@import "../../css/legacy.scss";
 
 #projects {
   @extend %basePage;
   background: #ffff;
-}
-
-.container {
-  @extend %container;
-  max-width: inherit;
 }
 
 .title {
@@ -152,6 +147,19 @@ footer {
 .project-action {
   display: flex;
   justify-content: space-between;
+}
+
+@import '../../css/animations.scss';
+
+.delay {
+  animation: slideUp 3.5s ease-in-out;
+  transform-origin: top center;
+}
+
+.disabled {
+  cursor: disabled;
+  pointer-events: none;
+  opacity: 0.5;
 }
 
 @import './responsive.scss';
