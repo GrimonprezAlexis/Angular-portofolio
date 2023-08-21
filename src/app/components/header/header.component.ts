@@ -33,7 +33,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
 
   isHeaderVisible = true;
   lastScrollTop = 0;
-  scrollThreshold = 35; // Adjust this value as needed
+  scrollThreshold = 20; // Adjust this value as needed
 
   @HostListener('window:scroll', [])
   onScroll(): void {
