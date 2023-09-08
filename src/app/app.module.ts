@@ -1,7 +1,6 @@
-import { DragDropModule } from '@angular/cdk/drag-drop';
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -21,6 +20,8 @@ import { ModalService } from './providers/modal/Modal.service';
 import { ModalProjectComponent } from './components/modalProject/modalProject.component';
 import { ModalCloseService } from './providers/modal/ModalClose.service';
 import { AlertComponent } from './components/alert/alert.component';
+import { AuthService } from './services/auth/auth.service';
+import { LoginComponent } from './pages/login/login.component';
 
 @NgModule({
   declarations: [
@@ -37,15 +38,16 @@ import { AlertComponent } from './components/alert/alert.component';
     FilterCarouselComponent,
     ModalProjectComponent,
     AlertComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
-    HttpClientModule,
     FormsModule,
-    DragDropModule,
+    ReactiveFormsModule,
+    HttpClientModule,
+    AppRoutingModule,
   ],
-  providers: [ModalService, ModalCloseService],
+  providers: [ModalService, ModalCloseService, AuthService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

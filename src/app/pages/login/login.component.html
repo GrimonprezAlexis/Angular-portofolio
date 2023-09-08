@@ -1,38 +1,57 @@
-<div class="background"></div>
-  <div class="container">
-    <div class="login-container">
-      <h1>Login</h1>
-      <div class="social-buttons">
-        <button class="social-button google">Login with Google</button>
-        <button class="social-button facebook">Login with Facebook</button>
-        <button class="social-button apple">Login with Apple</button>
-      </div>
-      <div class="divider">
-        <span class="divider-text">or</span>
-      </div>
-      <form>
-        <div class="input-group">
-          <label for="username">Username or Email</label>
-          <input type="text" id="username" placeholder="Enter your username or email">
+<div class="container">
+  <div class="login-container">
+    <h1>Login</h1>
+
+    <form 
+      name="loginForm" 
+      #f="ngForm" 
+      (ngSubmit)="f.form.valid && onSubmit()"
+    >
+      <div>
+        <label for="email-input">Email address</label>
+        <input
+          type="email"
+          name="email"
+          id="email-input"
+          [(ngModel)]="loginForm.username"
+          #email="ngModel"
+          placeholder="Enter email"
+          required
+        />
+        <div *ngIf="email.errors && f.submitted">
+          <small *ngIf="email.errors['required']">Please enter email address.!</small>
+          <small *ngIf="email.errors && email.errors['email']">Email address not well formed.!</small>
         </div>
-        <div class="input-group">
-          <label for="password">Password</label>
-          <div class="password-input">
-            <input type="password" id="password" placeholder="Enter your password">
-            <span class="toggle-password"></span>
-          </div>
-        </div>
-        <div class="checkbox-group">
-          <input type="checkbox" id="remember-me">
-          <label for="remember-me">Remember me</label>
-        </div>
-        <button class="submit-button">Login</button>
-      </form>
-      <div class="forgot-password">
-        <a href="#">Forgot password?</a>
       </div>
-      <div class="signup-section">
-        <h2>Don't have an account? <a href="#">Sign up</a></h2>
+  
+      <div>
+        <label for="input-password">Password</label>
+        <input
+          type="password"
+          name="input-password"
+          id="input-password"
+          [(ngModel)]="loginForm.password"
+          #password="ngModel"
+          placeholder="Password"
+          required
+          minlength="5"
+        />
+        <div *ngIf="password.errors && f.submitted">
+          <small *ngIf="password.errors['required']">Please enter password !</small>
+          <small *ngIf="password.errors['minlength']">Password must be at least 5 charavters !</small>
+
+        </div>
       </div>
-    </div>
+  
+      <button type="submit" class="btn btn-primary">
+        Submit
+      </button>
+    </form>
+
+    <!-- <div class="social-buttons">
+      <button class="social-button google">Login with Google</button>
+      <button class="social-button facebook">Login with Facebook</button>
+      <button class="social-button apple">Login with Apple</button>
+    </div> -->
   </div>
+</div>
