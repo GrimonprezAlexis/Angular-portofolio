@@ -7,17 +7,23 @@ import { AuthService } from 'src/app/services/auth/auth.service';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss'],
 })
-export class LoginComponent implements OnInit {
-  loginForm: any = {
-    username: null,
-    password: null,
-  };
+export class LoginComponent {
+  loginForm: FormGroup;
 
-  constructor() {}
+  constructor() {
+    this.loginForm = new FormGroup({
+      email: new FormControl('', [Validators.required, Validators.email]),
+      password: new FormControl('', [Validators.required]),
+    });
+  }
 
-  ngOnInit(): void {}
   onSubmit() {
-    console.log(this.loginForm);
+    if (this.loginForm.valid) {
+      console.log(this._v());
+    }
+  }
+  _v() {
+    return this.loginForm.value;
   }
 
   // onSubmit() {
