@@ -1,4 +1,13 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import {
+  ChangeDetectorRef,
+  Component,
+  ElementRef,
+  EventEmitter,
+  Input,
+  OnInit,
+  Output,
+  ViewChild,
+} from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ProjectTypes } from 'src/app/interface';
 import { ModalService } from 'src/app/providers/modal/Modal.service';
@@ -9,44 +18,33 @@ import { ModalCloseService } from 'src/app/providers/modal/ModalClose.service';
   templateUrl: './modalProject.component.html',
   styleUrls: ['./modalProject.component.scss'],
 })
-export class ModalProjectComponent implements OnInit {
-  @Input() data: ProjectTypes;
-  @Output() save: EventEmitter<ProjectTypes> = new EventEmitter<ProjectTypes>();
-  @Output() cancel: EventEmitter<void> = new EventEmitter<void>();
+export class ModalProjectComponent {
+  modalData: any = {}; // Store component and title
+  canCloseModal: boolean = false;
+  canBackModal: boolean = false;
+  @Output() valueChange: EventEmitter<any> = new EventEmitter<any>();
+  @ViewChild('modalElement') modalElement!: ElementRef;
 
   constructor(
-    private _route: ActivatedRoute,
-    private _modalService: ModalService,
-    private _modalCloseService: ModalCloseService,
-    private _router: Router
+    private modalService: ModalService,
+    private changeDetectorRef: ChangeDetectorRef
   ) {
-    this.data = this._route.snapshot.data['data']; // Retrieve the resolved project
-  }
-
-  ngOnInit() {
-    if (!this._modalService.isModalOpen()) {
-      this._modalService.openModal(ModalProjectComponent, {
-        data: this.data,
-      });
-    }
-    this._modalService.afterClosed().subscribe(() => {
-      this._router.navigate(['../'], { relativeTo: this._route });
+    this.modalService.modal$.subscribe((data) => {
+      this.modalData = data.data.project;
     });
   }
 
-  ngAfterViewInit() {}
-
   closeModal() {
-    this._modalService.closeModal();
-  }
+    const currentModalKey = this.modalService.getCurrentModalKey();
+    if (currentModalKey) {
+      const modalElement = this.modalElement.nativeElement;
+      const dialogElement2 = modalElement.querySelector('.custom-modal-dialog');
 
-  saveChanges() {
-    // Emit the updated project to save changes
-    this.save.emit(this.data);
-  }
-
-  cancelEdit() {
-    // Emit cancel event to close the modal
-    this.cancel.emit();
+      // Add closing classes to trigger animations
+      modalElement.classList.add('closing');
+      dialogElement2.classList.add('closing');
+      this.modalService.closeModal(currentModalKey, null);
+      this.changeDetectorRef.detectChanges();
+    }
   }
 }

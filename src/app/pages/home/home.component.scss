@@ -8,12 +8,13 @@
 }
 
 .container {
-    height: 100vh;
+    //height: 100vh;
     margin-top: 30px;
 
     .row {
       display: flex;
-      height: 100%;
+      height: 70vh;
+      margin-top: 3rem;
       
       .col {
         width: 25%;
@@ -46,6 +47,7 @@
 .col {
   background-image: none;
   -webkit-filter: grayscale(100%);
+  background-repeat: no-repeat;
   filter: grayscale(100%);
   -webkit-transition: .3s ease-in-out;
   transition: .3s ease-in-out;

@@ -1,76 +1,51 @@
-import {
-  Injectable,
-  ComponentRef,
-  ComponentFactoryResolver,
-  Injector,
-  ApplicationRef,
-  Type,
-} from '@angular/core';
-import { BehaviorSubject, Observable, Subject } from 'rxjs';
-
-interface ModalComponent {
-  data: any;
-}
+import { Injectable } from '@angular/core';
+import { BehaviorSubject, Observable, Subject, filter, map } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
 })
 export class ModalService {
-  private modalSubject = new Subject<ComponentRef<any>>();
-  private currentModal: ComponentRef<any> | undefined;
+  private modalSubject = new BehaviorSubject<any>(null);
+  public modal$: Observable<any> = this.modalSubject.asObservable();
   private modalOpen$ = new BehaviorSubject<boolean>(false);
-  private modalClosed$ = new Subject<void>(); // New subject to indicate modal closed
+  private modalClosed$ = new Subject<{ key: string; data: any }>();
 
-  constructor(
-    private componentFactoryResolver: ComponentFactoryResolver,
-    private injector: Injector,
-    private appRef: ApplicationRef
-  ) {}
+  private currentModalKeySubject = new BehaviorSubject<string | null>(null);
+  public currentModalKey$ = this.currentModalKeySubject.asObservable();
 
-  openModal<T extends ModalComponent>(
-    component: Type<T>,
-    data?: any
-  ): Observable<any> {
-    const componentRef = this.createComponent(
-      component,
-      data
-    ) as ComponentRef<ModalComponent> as ComponentRef<T>;
-    this.currentModal = componentRef;
-    this.modalSubject.next(componentRef);
-    this.modalOpen$.next(true); // Notify that the modal is open
-    return this.modalClosed$.asObservable();
-  }
+  // Un objet pour garder une trace des modales ouvertes
+  private openModals: { [key: string]: boolean } = {};
+  private modalOrder: string[] = [];
 
-  private createComponent<T extends ModalComponent>(
-    component: Type<T>,
-    data: any
-  ): ComponentRef<T> {
-    const componentFactory =
-      this.componentFactoryResolver.resolveComponentFactory(component);
-    const componentRef = componentFactory.create(
-      this.injector
-    ) as ComponentRef<T>;
-    componentRef.instance.data = data;
-    this.appRef.attachView(componentRef.hostView);
-
-    return componentRef;
-  }
-
-  closeModal(result?: any) {
-    if (this.currentModal) {
-      this.appRef.detachView(this.currentModal.hostView);
-      this.currentModal.destroy();
-      this.currentModal = undefined;
+  openModal(key: string, component: any, title?: string, data?: any) {
+    this.currentModalKeySubject.next(key); // Mettez à jour la clé de la modal courante
+    if (!this.modalOrder.includes(key)) {
+      this.modalOrder.push(key);
     }
-    this.modalClosed$.next();
-    this.modalOpen$.next(false);
+    this.modalSubject.next({ key, component, title, data });
+    this.modalOpen$.next(true);
+    this.openModals[key] = true; // Marquer la modal comme ouverte
   }
 
-  afterClosed() {
+  closeModal(key: string, data: any) {
+    this.modalSubject.next(null);
+    this.modalClosed$.next({ key, data });
+    this.modalOpen$.next(false);
+    this.openModals[key] = false; // Marquer la modal comme fermée
+    //this.modalOrder.pop();
+  }
+
+  getCurrentModalKey(): string | null {
+    return this.currentModalKeySubject.value;
+  }
+
+  afterClosed(): Observable<any> {
     return this.modalClosed$.asObservable();
   }
 
-  isModalOpen(): Observable<boolean> {
-    return this.modalOpen$.asObservable();
+  isModalOpen(key: string): Observable<boolean> {
+    return this.modalOpen$
+      .asObservable()
+      .pipe(map(() => this.openModals[key] || false));
   }
 }

@@ -120,16 +120,17 @@
 }
 
 footer {
-  margin-top: -3px;
   color: $black2;
-  display: grid;
-  row-gap: 20px;
-  margin: 0 1rem;
+  height: 15vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
   margin-bottom: 1rem;
 }
 
 .footer-sub {
-  margin-bottom: -10px;
+  margin: 0 1rem;
 }
 
 .project-title {

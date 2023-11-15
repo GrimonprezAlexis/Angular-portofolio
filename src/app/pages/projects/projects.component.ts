@@ -14,6 +14,8 @@ import { ProjectsService } from 'src/app/services/projects/Projects.service';
   styleUrls: ['./projects.component.scss'],
 })
 export class ProjectsComponent implements OnInit, AfterViewInit {
+  public modal$ = this._modalService.modal$;
+
   projects: ProjectTypes[] = []; // Initialize as an empty array
   currentTechno: string = 'All';
 
@@ -40,11 +42,7 @@ export class ProjectsComponent implements OnInit, AfterViewInit {
     this.fetchProjects();
   }
 
-  ngAfterViewInit() {
-    this._modalService.afterClosed().subscribe(() => {
-      this._router.navigate(['../'], { relativeTo: this._route });
-    });
-  }
+  ngAfterViewInit() {}
 
   private fetchProjects() {
     this._projectsService.getAllProjects().subscribe({
@@ -93,16 +91,15 @@ export class ProjectsComponent implements OnInit, AfterViewInit {
     );
   }
 
-  openProjectModal(projectId: any) {
-    this._modalService.openModal(ModalProjectComponent, {
-      data: this.projects.find((project) => project._id === projectId),
-    });
-    this._modalCloseService.subscribeToModalClose();
-  }
-
-  selectProject(selectedProject: ProjectTypes): void {
-    this.selectedProject = selectedProject;
-    this.openProjectModal(selectedProject._id);
+  openProjectModal(project: ProjectTypes) {
+    const modalKey = `Project-${project.title}`;
+    this._modalService.openModal(
+      modalKey,
+      ModalProjectComponent,
+      project.title,
+      { project }
+    );
+    this._modalService.afterClosed().subscribe((data: any) => {});
   }
 
   goToProjectUrl(url: string) {

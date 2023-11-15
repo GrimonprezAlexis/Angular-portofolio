@@ -9,3 +9,124 @@
     }
     
 }
+
+%button-style {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #ffffff;
+    background-color: #38495a;
+    border: 2px solid #38495a;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    transition: background-color 0.3s, box-shadow 0.3s;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+%btn-active {
+    background-color: #2b3846;
+    box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.3);
+}
+  
+.button-style {
+@extend %button-style;
+
+    &:hover {
+        @extend %btn-active;
+    }
+
+    &:focus {
+        outline: none;
+        box-shadow: 0 0 0 2px #38495a;
+    }
+
+    &:disabled {
+        z-index: 10;
+        cursor: not-allowed;
+    }
+}
+
+
+.button-style-outline {
+    @extend %button-style;
+    background-color: transparent;
+    border: 2px solid #38495a;
+    color: black;
+
+    &:hover {
+        @extend %btn-active;
+        color: white;
+    }
+
+    &.active {
+        @extend %btn-active;
+        color: white;
+        background: var(--dark-black);
+        box-shadow: inset 8px 0 0 var(--bs-form-valid-color); 
+    }
+
+    &:focus {
+        outline: none;
+        box-shadow: 0 0 0 2px #38495a;
+    }
+
+    &:disabled {
+        z-index: 10;
+        cursor: not-allowed;
+    }
+}
+
+
+$color-danger: #e21a41;
+$color-success: #2ecc71;
+$color-warning: #ebca40;
+
+.button-style-danger {
+    @extend %button-style;
+    background-color: $color-danger;
+    border: 2px solid $color-danger;
+
+    &:hover {
+        background-color: darken($color-danger, 10%);
+        border: 2px solid darken($color-danger, 10%);
+    }
+}
+
+.button-style-success {
+    @extend %button-style;
+    background-color: $color-success;
+    border: 2px solid $color-success;
+
+    &:hover {
+        background-color: darken($color-success, 10%);
+        border: 2px solid darken($color-success, 10%);
+    }
+}
+
+.button-style-warning {
+    @extend %button-style;
+    background-color: $color-warning;
+    border: 2px solid $color-warning;
+
+    &:hover {
+        background-color: darken($color-warning, 10%);
+        border: 2px solid darken($color-warning, 10%);
+    }
+}
+
+.button-style-close {
+    box-sizing: content-box;
+    width: 1em;
+    height: 1em;
+    margin-top: 0px;
+    padding: 0.3em;
+    color: black;
+    background: transparent var(--bs-btn-close-bg) center/1em auto no-repeat;
+    border: 0;
+    border-radius: 0.375rem;
+    opacity: var(--bs-btn-close-opacity);
+}

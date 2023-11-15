@@ -16,6 +16,7 @@ const routes: Routes = [
     path: 'projects/:id',
     component: ModalProjectComponent,
     resolve: { data: ProjectResolver }, // Update the property name to data
+    outlet: 'modalOutlet',
   },
   { path: 'about', component: AboutComponent },
   { path: 'contact', component: ContactComponent, canActivate: [AuthGuard] },

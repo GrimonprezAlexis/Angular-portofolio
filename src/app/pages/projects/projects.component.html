@@ -1,6 +1,10 @@
 <app-loader [isLoading]="isLoading" />
 
-<app-modalProject *ngIf="selectedProject" [data]="selectedProject"/>
+<ng-container *ngIf="modal$ | async as modalComponent">
+    <div class="container-fluid">
+      <app-modalProject/>
+    </div>
+  </ng-container>
 
 <section class="suggestions" id="projects" [class.dark-mode]="darkModeService.isDarkMode" *ngIf="projects && !isLoading">
     <div class="container">
@@ -13,7 +17,7 @@
             *ngIf="!hasError"
         />
         <app-alert [alert]="alert" *ngIf="hasError" />
-        <button type="button" class="btn btn-dark delay" (click)="getProjectFromLocal()" *ngIf="hasError">Charger les données local</button>
+        <button type="button" class="button-style-danger delay" (click)="getProjectFromLocal()" *ngIf="hasError">Charger les données local</button>
         
         <div class="wrapper-grid">
             <div 
@@ -27,9 +31,8 @@
                         <img loading="lazy" [src]="project.imageUrl" [alt]="project.title" *ngIf="project.imageUrl">
 
                         <div class="overlay">
-                            <div class="project-action">
-                                <button type="button" class="btn btn-default" (click)="goToProjectUrl(project.links.app_link)" *ngIf="project.links.app_link !== '#'">Voir le projet</button>
-                                <button type="button" class="btn btn-primary" [routerLink]="['/projects', project._id]" [ngClass]="hasError ? 'disabled' : '' ">Plus de détail</button>
+                            <div class="project-tags">
+                                <button class="btn" *ngFor="let techno of project.technologies" (click)="updateCurrentTechno(techno)">{{techno}}</button>
                             </div>
                         </div>
                     </div>
@@ -39,8 +42,22 @@
                             <h3 class="project-title">{{ project.subtitle }}</h3>                            
                         </div>
 
-                        <div class="project-tags">
-                            <button class="btn" *ngFor="let techno of project.technologies" (click)="updateCurrentTechno(techno)">{{techno}}</button>
+                        <div class="project-action">
+                            <button 
+                                type="button" 
+                                class="button-style" 
+                                (click)="goToProjectUrl(project.links.app_link)" 
+                                *ngIf="project.links.app_link !== '#'"
+                            >
+                                Voir le projet
+                            </button>
+                            <button 
+                                type="button" 
+                                class="button-style-outline" 
+                                (click)="openProjectModal(project)"
+                            >
+                                Plus de détail
+                            </button>
                         </div>
                     </footer>
                 </div>

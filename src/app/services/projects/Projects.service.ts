@@ -77,26 +77,7 @@ export class ProjectsService {
   }
 
   getTechnologiesList(projects: ProjectTypes[]): string[] {
-    const allowedTechnologies: string[] = [
-      'Angular',
-      'AngularJS',
-      'API',
-      'AdobeXD',
-      'CSS',
-      'Figma',
-      'Github',
-      'Javascript',
-      'Microservice',
-      'MongoDB',
-      'NodeJS',
-      'Prestashop',
-      'React',
-      'Redux',
-      'Recharts',
-      'RxJS',
-      'SASS',
-      'Typescript',
-    ];
+    const allowedTechnologies: string[] = [];
 
     const technologiesList: string[] = [];
     projects.forEach((project: ProjectTypes) => {
