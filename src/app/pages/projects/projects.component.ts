@@ -59,6 +59,7 @@ export class ProjectsComponent implements OnInit, AfterViewInit {
           type: 'error',
           msg: 'Erreur lors de la récupération des projets',
         };
+        this.getProjectFromLocal();
       },
     });
   }

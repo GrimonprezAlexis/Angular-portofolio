@@ -318,6 +318,38 @@
       "repository": "https://github.com/your-repo-link",
       "maquette": "https://your-maquette-link"
     }
+  },
+  {
+    "_id": "18",
+    "title": "Findslator",
+    "subtitle": "Plateforme de mise en relation entre traducteurs et clients",
+    "job": "Freelance",
+    "technologies": [
+      "HTML",
+      "CSS",
+      "Font Awesome",
+      "Angular",
+      "Rxjs",
+      "Auth0",
+      "NodeJS"
+    ],
+    "icons": [
+      "fa-brands fa-html5",
+      "fa-brands fa-css3-alt",
+      "fa-brands fa-font-awesome-flag",
+      "fa-brands fa-github"
+    ],
+    "imageUrl": "https://github.com/GrimonprezAlexis/portfolio-img/blob/main/Findslator.png?raw=true ",
+    "imagesUrl": [],
+    "description": "App web utilisant Auth0.",
+    "tags": [
+      "Projet 2"
+    ],
+    "links": {
+      "app_link": "https://new-findslator-fe.vercel.app",
+      "repository": "",
+      "maquette": ""
+    }
   }
 ]
   
