@@ -57,7 +57,7 @@ export class ProjectsComponent implements OnInit, AfterViewInit {
         this.hasError = true;
         this.alert = {
           type: 'error',
-          msg: 'Something went wrong while fetching projects.',
+          msg: 'Erreur lors de la récupération des projets',
         };
       },
     });
