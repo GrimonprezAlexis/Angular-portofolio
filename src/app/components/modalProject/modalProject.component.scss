@@ -26,10 +26,11 @@
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
   overflow: hidden; /* Ensure custom-modal content doesn't overflow dialog */
   margin-right: initial;
-  transform: translateX(100%);
+  transform: translateX(-100%);
   animation: slide-in 0.4s forwards;
 
   &.closing {
+    transform: translateX(100%);
     animation: slide-out 0.3s forwards;
   }
 }
@@ -134,7 +135,10 @@
   }
 
   .links {
+    display: flex;
+    gap: 1rem;
     margin-top: 15px;
+
 
     a {
       margin-right: 10px;  
