@@ -55,10 +55,6 @@ export class ProjectsComponent implements OnInit, AfterViewInit {
         console.error('Error fetching portfolio data:', error);
         this.isLoading = false;
         this.hasError = true;
-        this.alert = {
-          type: 'error',
-          msg: 'Erreur lors de la récupération des projets',
-        };
         this.getProjectFromLocal();
       },
     });
