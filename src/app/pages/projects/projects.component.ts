@@ -47,9 +47,13 @@ export class ProjectsComponent implements OnInit, AfterViewInit {
   private fetchProjects() {
     this._projectsService.getAllProjects().subscribe({
       next: (data) => {
-        this.projects = data;
-        this.updateTechnoWithIcons(this.projects);
         this.isLoading = false;
+        this.projects = data;
+        if (this.projects && this.projects.length === 0) {
+          this.getProjectFromLocal();
+        } else {
+          this.updateTechnoWithIcons(this.projects);
+        }
       },
       error: (error) => {
         console.error('Error fetching portfolio data:', error);

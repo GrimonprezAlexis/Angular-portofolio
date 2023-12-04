@@ -23,9 +23,7 @@ export class ProjectsService {
         map((response) => response.data),
         catchError((error) => {
           console.error('Error fetching projects:', error);
-          return throwError(
-            () => new Error('Something went wrong while fetching projects.')
-          );
+          return this.getLocalProjects();
         })
       );
   }
